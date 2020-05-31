@@ -1,3 +1,5 @@
+**The Good Beauty** 
+
 - [Project Planning](#project-planning)
   - [Overview](#overview)
   - [Wireframes](#wireframes)
@@ -40,14 +42,12 @@ This is an e-commerce site for beauty products. I will be using an api called ma
 
 ### MVP
 
-1. The site will allow users to browse through beauty products by brands/categories
-2. The site will render a different categories/brands page when clicked 
-3. The site will render a product page when a product is clicked 
+1. The site will allow users to browse through beauty products by brands/categories.
+2. The site will render a different categories/brands page when clicked.
+3. The site will render a product page when a product is clicked.
 4. Users will be able search for products by name, brand, concern, etc...
-5. Users will be able to sign in and register for the page
+5. Users will be able to sign in and register for The Good Beauty.
 
-
-**The Good Beauty** 
 
 <br>
 
@@ -121,11 +121,12 @@ This is an e-commerce site for beauty products. I will be using an api called ma
 
 |  Component   |    Type    | State | Props | Description                                                      |
 | :----------: | :--------: | :---: | :---: | :--------------------------------------------------------------- |
-|    Header    | functional |   n   |   n   | _The header will contain a brief intro and link to Login/Register Page._               |
-|  Navigation  | functional |   y   |   y   | _Each navigation item will provide a list of links to each of the pages._       |
-|   Shop Page   | functional |   y   |   n   | _The shoppage will render each product by category/brand ._      |
-|Produc Page | functional |   y  |   y   | _The Product page will have a detail description of the clicked product and allowu user to add to cart._                 |
-|    Footer    | functional |   n   |   n   | _The footer will show info about me and a link to my portfolio._ |
+|    Header    | functional |   n   |   n   | The header will contain a brief intro and link to Login/Register page.|
+|  Navigation  | functional |   y   |   y   | Each navigation item(being 5 categories) will provide a list of links to each of the pages.|
+|   Shop Page  | functional |   y   |   n   | The shoppage will render each product by category/brand.    |
+|  Produc Page | functional |   y   |   y   | The Product page will have a detail description of the clicked.|    
+|  Sign in Sign up page | functional |   y   |   y   | The Product page will have a detail description of the page clicked with customer reviews.|  
+|    Footer    | functional |   n   |   n   | The footer will show info about me and a link to my portfolio. |
 
 <br>
 
@@ -137,7 +138,7 @@ This is an e-commerce site for beauty products. I will be using an api called ma
 
 | Task                | Priority | Estimated Time | Time Invested | Actual Time |
 | ------------------- | :------: | :------------: | :-----------: | :---------: |
-| Add Contact Form    |    L     |     3 hrs      |     2 hrs     |    3 hrs    |
+| Create pages (shop/product/sign in)    |    L     |     3 hrs      |     2 hrs     |    3 hrs    |
 | Create CRUD Actions |    H     |     3 hrs      |     1 hrs     |     TBD     |
 | TOTAL               |          |     6 hrs      |     3 hrs     |     TBD     |
 
