@@ -14,12 +14,6 @@
   - [Code Showcase](#code-showcase)
   - [Code Issues & Resolutions](#code-issues--resolutions)
 
-## Project Planning
-
-> This section should be completed for your project pitch with instructors.
->
-> To ensure correct Markdown, it's recommended that you copy and paste the raw template code. The content provided is example content ONLY. You must make changes to all sections as they relate to your own project.
-
 <br>
 
 ### Overview
@@ -33,9 +27,13 @@ This is an e-commerce site for beauty products. I will be using an api called ma
 <br>
 
 ### Wireframes
-
+#### Homepage 
 ![](assets/Homepage.png)
+#### Shopping Page 
 ![](assets/ShopPage.png)
+#### Product Details Page 
+![](assets/product-details-page.png)
+#### Sign in and Sign Up page 
 ![](assets/sign-in-page.png)
 
 <br>
@@ -102,7 +100,8 @@ This is an e-commerce site for beauty products. I will be using an api called ma
         "tag_list": [
             "Vegan",
             "cruelty free"
-        ],```
+        ],
+```
 
 <br>
 
