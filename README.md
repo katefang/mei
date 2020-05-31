@@ -1,4 +1,4 @@
-**The Good Beauty** 
+#The Good Beauty
 
 - [Project Planning](#project-planning)
   - [Overview](#overview)
@@ -24,7 +24,7 @@
 
 **Project Description**
 
-This is an e-commerce site for beauty products. I will be using an api called makeup api.
+The Good Beauty is an e-commerce site for beauty products. The site is built on "makeup api".  Users will be able to search prodcuts by brand, categories etc.. 
 
 <br>
 
@@ -79,7 +79,7 @@ This is an e-commerce site for beauty products. I will be using an api called ma
 
 |    API     | Quality Docs? | Website       | Sample Query                            |
 | :--------: | :-----------: | :------------ | :-------------------------------------- |
-| makeupAPI |      yes      | _https://makeup-api.herokuapp.com/_ | _http://makeup-api.herokuapp.com/api/v1/products.json?brand=clinique_ |
+| makeup API |      yes      | _https://makeup-api.herokuapp.com/_ | _http://makeup-api.herokuapp.com/api/v1/products.json?brand=clinique_ |
 
 ```
 [
@@ -110,7 +110,37 @@ This is an e-commerce site for beauty products. I will be using an api called ma
 > Use this section to define your React components and the data architecture of your app.
 
 ```
-
+src
+|__ assets/
+      |__ data-tests
+      |__ mockups
+|__ components/
+      |__ header/
+            |__ header.component.jsx
+            |__ header.styles.css
+      |__ footer/
+            |__ footer.component.jsx
+            |__ footer.styles.css
+      |__ search/
+            |__ search.component.jsx
+            |__ search.styles.css
+      |__ nav-links/
+            |__ nav-links.component.jsx
+            |__ nav-links.styles.css
+      
+|__ pages/
+      |__ home/
+            |__ home.component.jsx
+            |__ home.styles.css
+      |__ shop/
+            |__ shop.component.jsx
+            |__ shop.styles.css
+      |__ product-detail/
+            |__ detail.component.jsx
+            |__ detail.styles.css
+      |__ sign-in-sign-up/
+            |__ sign-in-sign-up.component.jsx
+            |__ sign-in-sign-up.styles.css
 ```
 
 <br>
@@ -138,9 +168,11 @@ This is an e-commerce site for beauty products. I will be using an api called ma
 
 | Task                | Priority | Estimated Time | Time Invested | Actual Time |
 | ------------------- | :------: | :------------: | :-----------: | :---------: |
-| Create pages (shop/product/sign in)    |    L     |     3 hrs      |     2 hrs     |    3 hrs    |
-| Create CRUD Actions |    H     |     3 hrs      |     1 hrs     |     TBD     |
-| TOTAL               |          |     6 hrs      |     3 hrs     |     TBD     |
+| Create pages (shop/product/sign in)|    H    |     10 hrs      |    TBD    |    TBD   |
+| Create components to be reused in pages|    H     |     10 hrs      |    TBD     |     TBD     |
+|  Implement Firebase auth and login|    H     |     10 hrs      |     TBD    |     TBD     |
+| CSS |    H     |     15 hrs      |     TBD     |     TBD     |
+| TOTAL               |          |     45 hrs      |     3 hrs     |     TBD     |
 
 <br>
 
@@ -156,7 +188,7 @@ This is an e-commerce site for beauty products. I will be using an api called ma
 
 ### Post-MVP
 
-- User will be able to add item to cart 
+- implement add to cart functionality 
 
 <br>
 
@@ -166,12 +198,9 @@ This is an e-commerce site for beauty products. I will be using an api called ma
 
 ### Code Showcase
 
-> Use this section to include a brief code snippet of functionality that you are proud of and a brief description.
-
 ```
 code snippet here
 ```
 
 ### Code Issues & Resolutions
 
-> Use this section to list of all major issues encountered and their resolution, if you'd like.
