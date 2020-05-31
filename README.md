@@ -24,47 +24,29 @@
 
 ### Overview
 
-**The Good Beauty** 
+**The Good Beauty**
 
-**Project Description** is lorem ipsum dolor sit amet. Phasellus dapibus fermentum risus vitae bibendum. Integer vel ipsum mollis odio sollicitudin ornare eu vel ex. In quis fringilla velit, ac maximus quam. Etiam eget placerat neque. Aenean faucibus sem non nisi lobortis ullamcorper._
+**Project Description**
+
+This is an e-commerce site for beauty products. I will be using an api called makeup api.
 
 <br>
 
 ### Wireframes
 
-> Use the Wireframes section to display desktop, tablet and mobile views.
-
-![Dummy Link](url)
-
-- Desktop Landing
-
-![Dummy Link](url)
-
-- Desktop Body
-
-![Dummy Link](url)
-
-- Desktop Resource Index
-
-![Dummy Link](url)
-
-- Desktop Resource Show
-
-![Dummy Link](url)
-
-- Tablet Resource Index
-
-![Dummy Link](url)
-
-- Mobile Resource Index
+![](assets/homepage.png)
+![](assets/ShopPage.png)
+![](assets/sign-in-page.png)
 
 <br>
 
 ### MVP
 
-> The Minimum Viable Product should be a well-planned and easily-communicated product, ensuring that the client's deliverable will be achievable and meet specifications within the time frame estimated.
+1. The site will allow users to browse through beauty products by brands/categories
+2. Users will be able to sign in and register for the page
+3. Users will be able search for products by name, brand, concern, etc...
 
-_The **Project Title** MVP lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus dapibus fermentum risus vitae bibendum. Integer vel ipsum mollis odio sollicitudin ornare eu vel ex. In quis fringilla velit, ac maximus quam. Etiam eget placerat neque. Aenean faucibus sem non nisi lobortis ullamcorper._
+\_The **Good Beauty** MVP
 
 <br>
 
@@ -82,11 +64,11 @@ _The **Project Title** MVP lorem ipsum dolor sit amet, consectetur adipiscing el
 
 > Use this section to list all supporting libraries and their role in the project.
 
-|     Library      | Description                                |
-| :--------------: | :----------------------------------------- |
-|   React Router   | _Lorem ipsum dolor sit amet, consectetur._ |
-| React SemanticUI | _Lorem ipsum dolor sit amet, consectetur._ |
-|   React Spring   | _Lorem ipsum dolor sit amet, consectetur._ |
+|      Library      | Description                                   |
+| :---------------: | :-------------------------------------------- |
+|   React Router    | allow routing through pages                   |
+| React Material UI | css design                                    |
+|     Firebase      | to allow user's to login/register with google |
 
 <br>
 
@@ -109,20 +91,25 @@ JSON data sample from your API goes here.
 > Use this section to define your React components and the data architecture of your app.
 
 ```
-src
-|__ assets/
-      |__ data-tests
-      |__ fonts
-      |__ graphics
-      |__ images
-      |__ mockups
-|__ components/
-      |__ Header.jsx
-      |__ Hero.jsx
-      |__ Ipsum.jsx
-      |__ Lorem.jsx
-      |__ CTA.jsx
-      |__ Footer.jsx
+[
+    {
+        "id": 1048,
+        "brand": "colourpop",
+        "name": "Lippie Pencil",
+        "price": "5.0",
+        "price_sign": "$",
+        "currency": "CAD",
+        "image_link": "https://cdn.shopify.com/s/files/1/1338/0845/collections/lippie-pencil_grande.jpg?v=1512588769",
+        "product_link": "https://colourpop.com/collections/lippie-pencil",
+        "website_link": "https://colourpop.com",
+        "description": "Lippie Pencil A long-wearing and high-intensity lip pencil that glides on easily and prevents feathering. Many of our Lippie Stix have a coordinating Lippie Pencil designed to compliment it perfectly, but feel free to mix and match!",
+        "rating": null,
+        "category": "pencil",
+        "product_type": "lip_liner",
+        "tag_list": [
+            "Vegan",
+            "cruelty free"
+        ],
 ```
 
 <br>
@@ -143,7 +130,7 @@ src
 
 #### Component Estimates
 
-> Use this section to estimate the time necessary to build out each of the components you've described above. 
+> Use this section to estimate the time necessary to build out each of the components you've described above.
 >
 > Time frames are key to the development cycle. You have limited time to code your app, and your estimates can then be used to evalute possibilities of your MVP and post-MVP based on time needed. It's best you assume an additional hour for each component, as well as a few hours added to the total time, to play it safe.
 
@@ -174,7 +161,7 @@ src
 
 <br>
 
-***
+---
 
 ## Project Delivery
 
