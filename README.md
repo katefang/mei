@@ -34,7 +34,7 @@ This is an e-commerce site for beauty products. I will be using an api called ma
 
 ### Wireframes
 
-![](assets/homepage.png)
+![](assets/Homepage.png)
 ![](assets/ShopPage.png)
 ![](assets/sign-in-page.png)
 
@@ -43,10 +43,13 @@ This is an e-commerce site for beauty products. I will be using an api called ma
 ### MVP
 
 1. The site will allow users to browse through beauty products by brands/categories
-2. Users will be able to sign in and register for the page
-3. Users will be able search for products by name, brand, concern, etc...
+2. The site will render a different categories/brands page when clicked 
+3. The site will render a product page when a product is clicked 
+4. Users will be able search for products by name, brand, concern, etc...
+5. Users will be able to sign in and register for the page
 
-\_The **Good Beauty** MVP
+
+**The Good Beauty** 
 
 <br>
 
@@ -78,17 +81,7 @@ This is an e-commerce site for beauty products. I will be using an api called ma
 
 |    API     | Quality Docs? | Website       | Sample Query                            |
 | :--------: | :-----------: | :------------ | :-------------------------------------- |
-| WeatherAPI |      yes      | _example.com_ | _example.com/mickeymouse?s=movies&t=10_ |
-
-```
-JSON data sample from your API goes here.
-```
-
-<br>
-
-#### Component Hierarchy
-
-> Use this section to define your React components and the data architecture of your app.
+| makeupAPI |      yes      | _https://makeup-api.herokuapp.com/_ | _http://makeup-api.herokuapp.com/api/v1/products.json?brand=clinique_ |
 
 ```
 [
@@ -109,7 +102,16 @@ JSON data sample from your API goes here.
         "tag_list": [
             "Vegan",
             "cruelty free"
-        ],
+        ],```
+
+<br>
+
+#### Component Hierarchy
+
+> Use this section to define your React components and the data architecture of your app.
+
+```
+
 ```
 
 <br>
@@ -120,10 +122,10 @@ JSON data sample from your API goes here.
 
 |  Component   |    Type    | State | Props | Description                                                      |
 | :----------: | :--------: | :---: | :---: | :--------------------------------------------------------------- |
-|    Header    | functional |   n   |   n   | _The header will contain the navigation and logo._               |
-|  Navigation  | functional |   n   |   n   | _The navigation will provide a link to each of the pages._       |
-|   Gallery    |   class    |   y   |   n   | _The gallery will render the posts using cards in flexbox._      |
-| Gallery Card | functional |   n   |   y   | _The cards will render the post info via props._                 |
+|    Header    | functional |   n   |   n   | _The header will contain a brief intro and link to Login/Register Page._               |
+|  Navigation  | functional |   y   |   y   | _Each navigation item will provide a list of links to each of the pages._       |
+|   Shop Page   | functional |   y   |   n   | _The shoppage will render each product by category/brand ._      |
+|Produc Page | functional |   y  |   y   | _The Product page will have a detail description of the clicked product and allowu user to add to cart._                 |
 |    Footer    | functional |   n   |   n   | _The footer will show info about me and a link to my portfolio._ |
 
 <br>
@@ -154,10 +156,7 @@ JSON data sample from your API goes here.
 
 ### Post-MVP
 
-> Use this section to document ideas you've had that would be fun (or necessary) for your Post-MVP. This will be helpful when you return to your project after graduation!
-
-- _Add user account and auth capabilities._
-- _Utilize the Giphy API to welcome new users with funny gifs._
+- User will be able to add item to cart 
 
 <br>
 
