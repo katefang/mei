@@ -1,4 +1,4 @@
-#The Good Beauty
+##The Good Beauty
 
 - [Project Planning](#project-planning)
   - [Overview](#overview)
@@ -46,18 +46,16 @@ The Good Beauty is an e-commerce site for beauty products. The site is built on 
 2. The site will render a different categories/brands page when clicked.
 3. The site will render a product page when a product is clicked.
 4. Users will be able search for products by name, brand, concern, etc...
-5. Users will be able to sign in and register for The Good Beauty.
 
 
 <br>
 
 #### Goals
 
-- _Lorem ipsum, dolor sit amet,_
-- _consectetur adipiscing elit._
-- _Phasellus dapibus fermentum risus vitae bibendum._
-- _Integer vel ipsum mollis odio sollicitudin ornare eu vel ex._
-- _etc._
+- _search for products by category/brand name_
+- _drop down list with relevant sub categories_
+- _sign in and sign up up with user auth functionality_
+- _small screen friendly. 
 
 <br>
 
@@ -69,7 +67,8 @@ The Good Beauty is an e-commerce site for beauty products. The site is built on 
 | :---------------: | :-------------------------------------------- |
 |   React Router    | allow routing through pages                   |
 | React Material UI | css design                                    |
-|     Firebase      | to allow user's to login/register with google |
+| axios | fetch api data                                   |
+| Firebase (post MVP) | to allow user's to login/register with google |
 
 <br>
 
@@ -153,7 +152,7 @@ src
 | :----------: | :--------: | :---: | :---: | :--------------------------------------------------------------- |
 |    Header    | functional |   n   |   n   | The header will contain a brief intro and link to Login/Register page.|
 |  Navigation  | functional |   y   |   y   | Each navigation item(being 5 categories) will provide a list of links to each of the pages.|
-|   Shop Page  | functional |   y   |   n   | The shoppage will render each product by category/brand.    |
+|   Shop Page  | functional |   y   |   y   | The shoppage will render each product by category/brand.    |
 |  Produc Page | functional |   y   |   y   | The Product page will have a detail description of the clicked.|    
 |  Sign in Sign up page | functional |   y   |   y   | The Product page will have a detail description of the page clicked with customer reviews.|  
 |    Footer    | functional |   n   |   n   | The footer will show info about me and a link to my portfolio. |
@@ -188,7 +187,8 @@ src
 
 ### Post-MVP
 
-- implement add to cart functionality 
+- Implement add to cart functionality 
+- Add user auth capabilities 
 
 <br>
 
