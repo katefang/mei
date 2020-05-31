@@ -1,4 +1,4 @@
-##The Good Beauty
+## The Good Beauty
 
 - [Project Planning](#project-planning)
   - [Overview](#overview)
