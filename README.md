@@ -43,7 +43,7 @@ The Good Beauty is an e-commerce site for beauty products. The site is built on 
 ### MVP
 
 1. The site will allow users to browse through beauty products by brands/categories.
-2. The site will render a different categories/brands page when clicked.
+2. The site will render different categories/brands page when clicked.
 3. The site will render a product page when a product is clicked.
 4. Users will be able search for products by name, brand, concern, etc...
 
@@ -55,7 +55,7 @@ The Good Beauty is an e-commerce site for beauty products. The site is built on 
 - _search for products by category/brand name_
 - _drop down list with relevant sub categories_
 - _sign in and sign up up with user auth functionality_
-- _small screen friendly. 
+- _small screen friendly._
 
 <br>
 
@@ -171,7 +171,7 @@ src
 | Create components to be reused in pages|    H     |     10 hrs      |    TBD     |     TBD     |
 |  Implement Firebase auth and login|    H     |     10 hrs      |     TBD    |     TBD     |
 | CSS |    H     |     15 hrs      |     TBD     |     TBD     |
-| TOTAL               |          |     45 hrs      |     3 hrs     |     TBD     |
+| TOTAL               |          |     45 hrs      |     TBD     |     TBD     |
 
 <br>
 
