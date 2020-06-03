@@ -5,6 +5,7 @@ import ShopPage from "./pages/shoppage/shoppage.component";
 import SignInSignUp from "./pages/sign-in-sign-up/sign-in-sign-up.component";
 import theme from "./App.styles";
 import { MuiThemeProvider, CssBaseline } from "@material-ui/core";
+import "./App.styles.css";
 
 function App() {
   return (

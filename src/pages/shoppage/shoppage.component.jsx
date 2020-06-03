@@ -4,7 +4,6 @@ import SubHeader from "../../components/subheader/subheader.component";
 import NavBar from "../../components/nav-bar/nav-bar.component";
 import Footer from "../../components/footer/footer.component";
 import ProductCategory from "../product-category/product-category.component";
-import { Link } from "react-router-dom";
 
 const ShopPage = () => {
   return (

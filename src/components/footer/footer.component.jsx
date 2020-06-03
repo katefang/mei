@@ -1,5 +1,5 @@
 import React from "react";
-import { Typography, Container, Link } from "@material-ui/core";
+import { Container, Link } from "@material-ui/core";
 import { LinkedIn, GitHub } from "@material-ui/icons";
 import { makeStyles } from "@material-ui/core/styles";
 
@@ -18,7 +18,7 @@ const Footer = () => {
   return (
     <footer className={classes.footer}>
       <Container maxWidth="sm">
-        <p>Learn more about me below</p>
+        <p>Follow me on</p>
         <Link>
           <LinkedIn />
         </Link>
