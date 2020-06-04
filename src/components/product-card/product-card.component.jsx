@@ -4,29 +4,29 @@ import { Grid } from "@material-ui/core";
 import { makeStyles } from "@material-ui/styles";
 
 const useStyles = makeStyles(theme => ({
-  root: {
+  wrapper: {
     flexGrow: "1",
-    height: "400px",
+    height: "25vw",
   },
   img: {
-    // width: "100%",
-    // height: "95%",
+    backgroundSize: "100%",
+    width: "100%",
+    height: "95%",
     padding: theme.spacing(2),
     textAlign: "center",
     color: theme.palette.text.secondary,
   },
-  // footer: {
-  //   width: "100%",
-  //   height: "5%",
-  // },
 }));
 
-const ProductCard = ({ name, image_link, price, price_sign }) => {
-  const { img, footer } = useStyles();
+const ProductCard = ({ name, api_featured_image, price, price_sign }) => {
+  const { img, footer, wrapper } = useStyles();
 
   return (
-    <Grid item xs={12} sm={6} md={1}>
-      <div className={img} style={{ backgroundImage: `url(${image_link})` }} />
+    <Grid className={wrapper} item md={3} sm={4} xs={6}>
+      <div
+        className={img}
+        style={{ backgroundImage: `url(${api_featured_image})` }}
+      />
       <div className={footer}>
         <div className="name">{name}</div>
         {price > 0 && (

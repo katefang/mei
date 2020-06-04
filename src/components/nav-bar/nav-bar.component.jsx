@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useState, useRef } from "react";
 import { Link } from "react-router-dom";
-import { Typography, Container } from "@material-ui/core";
+import { Container, Typography } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
+import HoverLink from "../hover-link/hover-link.component";
+import CategoryList from "../category-list/category-list.component";
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles(() => ({
   container: {
     display: "flex",
     justifyContent: "space-around",
@@ -15,24 +17,64 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const NavBar = () => {
-  const classes = useStyles();
+  const [anchorEl, setAnchorEl] = useState(null);
+  const [open1, setOpen1] = useState(null);
+  const [open2, setOpen2] = useState(null);
+  const [open3, setOpen3] = useState(null);
+
+  const handlePopoverOpen = (e, num) => {
+    setAnchorEl(e.currentTarget);
+    if (num === 1) {
+      setOpen1(true);
+      setOpen2(false);
+      setOpen3(false);
+    } else if (num === 2) {
+      setOpen1(false);
+      setOpen2(true);
+      setOpen3(false);
+    } else {
+      setOpen1(false);
+      setOpen2(false);
+      setOpen3(true);
+    }
+  };
+  const handlePopoverClose = () => {
+    setAnchorEl(null);
+    setOpen1(false);
+    setOpen2(false);
+    setOpen3(false);
+  };
+
+  const { container } = useStyles();
+  const popoverAnchor = useRef(null);
   return (
-    <Container className={classes.container}>
-      <Link className={classes.links} path="/shop/skincare">
-        SKINCARE
-      </Link>
-      <Link className={classes.links} path="/shop/makeup">
-        MAKEUP
-      </Link>
-      <Link className={classes.links} path="/shop/hair">
-        HAIR
-      </Link>
-      <Link className={classes.links} path="/shop/bath&body">
-        BATH & BODY
-      </Link>
-      <Link className={classes.links} path="/shop/fragrance">
-        FRAGRANCE
-      </Link>
+    <Container className={container}>
+      <Typography
+        ref={popoverAnchor}
+        onMouseEnter={e => handlePopoverOpen(e, 1)}
+        onMouseLeave={handlePopoverClose}
+      >
+        CATEGORIES
+      </Typography>
+      <HoverLink
+        anchorEl={popoverAnchor.current}
+        handlePopoverClose={handlePopoverClose}
+        open={open1}
+      >
+        <CategoryList />
+      </HoverLink>
+      <Typography onMouseEnter={e => handlePopoverOpen(e, 2)}>
+        BRANDS
+      </Typography>
+      <HoverLink
+        anchorEl={anchorEl}
+        handlePopoverClose={handlePopoverClose}
+        open={open2}
+        onMouseLeave={handlePopoverClose}
+      >
+        HELLO
+      </HoverLink>
+      <Typography onMouseEnter={e => handlePopoverOpen(e, 3)}>TYPE</Typography>
     </Container>
   );
 };

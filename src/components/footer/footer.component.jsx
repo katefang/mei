@@ -19,10 +19,10 @@ const Footer = () => {
     <footer className={classes.footer}>
       <Container maxWidth="sm">
         <p>Follow me on</p>
-        <Link>
+        <Link href="https://www.linkedin.com/in/katefang33/">
           <LinkedIn />
         </Link>
-        <Link>
+        <Link href="https://github.com/katefang">
           <GitHub />
         </Link>
         <br />
