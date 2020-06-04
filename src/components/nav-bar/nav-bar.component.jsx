@@ -1,9 +1,10 @@
-import React, { useState, useRef } from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
 import { Container, Typography } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import HoverLink from "../hover-link/hover-link.component";
 import CategoryList from "../category-list/category-list.component";
+import TypeList from "../types/type-list.component";
+import BrandList from "../brands/brand-list.component";
 
 const useStyles = makeStyles(() => ({
   container: {
@@ -18,9 +19,9 @@ const useStyles = makeStyles(() => ({
 
 const NavBar = () => {
   const [anchorEl, setAnchorEl] = useState(null);
-  const [open1, setOpen1] = useState(null);
-  const [open2, setOpen2] = useState(null);
-  const [open3, setOpen3] = useState(null);
+  const [open1, setOpen1] = useState(false);
+  const [open2, setOpen2] = useState(false);
+  const [open3, setOpen3] = useState(false);
 
   const handlePopoverOpen = (e, num) => {
     setAnchorEl(e.currentTarget);
@@ -45,24 +46,23 @@ const NavBar = () => {
     setOpen3(false);
   };
 
-  const { container } = useStyles();
-  const popoverAnchor = useRef(null);
+  const { container, all } = useStyles();
   return (
     <Container className={container}>
-      <Typography
-        ref={popoverAnchor}
-        onMouseEnter={e => handlePopoverOpen(e, 1)}
-        onMouseLeave={handlePopoverClose}
-      >
+      {/* <Link className={links} to="/shopall">
+        SHOP ALL
+      </Link> */}
+      <Typography onMouseEnter={e => handlePopoverOpen(e, 1)}>
         CATEGORIES
       </Typography>
       <HoverLink
-        anchorEl={popoverAnchor.current}
+        anchorEl={anchorEl}
         handlePopoverClose={handlePopoverClose}
         open={open1}
       >
         <CategoryList />
       </HoverLink>
+
       <Typography onMouseEnter={e => handlePopoverOpen(e, 2)}>
         BRANDS
       </Typography>
@@ -70,11 +70,20 @@ const NavBar = () => {
         anchorEl={anchorEl}
         handlePopoverClose={handlePopoverClose}
         open={open2}
-        onMouseLeave={handlePopoverClose}
       >
-        HELLO
+        <BrandList />
       </HoverLink>
-      <Typography onMouseEnter={e => handlePopoverOpen(e, 3)}>TYPE</Typography>
+
+      <Typography onMouseEnter={e => handlePopoverOpen(e, 3)}>
+        TYPES
+        <HoverLink
+          anchorEl={anchorEl}
+          handlePopoverClose={handlePopoverClose}
+          open={open3}
+        >
+          <TypeList />
+        </HoverLink>
+      </Typography>
     </Container>
   );
 };

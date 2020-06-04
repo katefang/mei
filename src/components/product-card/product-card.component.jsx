@@ -1,40 +1,62 @@
 import React from "react";
-import { Grid } from "@material-ui/core";
-// import { Link } from "react-router-dom";
+import { Grid, Paper } from "@material-ui/core";
 import { makeStyles } from "@material-ui/styles";
 
 const useStyles = makeStyles(theme => ({
   wrapper: {
     flexGrow: "1",
-    height: "25vw",
+    height: "26vw",
   },
+
   img: {
-    backgroundSize: "100%",
+    backgroundSize: "cover",
+    backgroundPosition: "Center",
     width: "100%",
-    height: "95%",
+    height: "100%",
     padding: theme.spacing(2),
     textAlign: "center",
     color: theme.palette.text.secondary,
   },
+  footer: {
+    width: "100%",
+    display: "flex",
+    justifyContent: "space-between",
+    paddingTop: theme.spacing(1),
+  },
+  productPrice: {
+    display: "inline",
+  },
+  productName: {
+    display: "inline",
+  },
 }));
 
-const ProductCard = ({ name, api_featured_image, price, price_sign }) => {
-  const { img, footer, wrapper } = useStyles();
+const ProductCard = ({ brand, name, api_featured_image, price }) => {
+  const { img, footer, wrapper, productName, productPrice } = useStyles();
 
   return (
-    <Grid className={wrapper} item md={3} sm={4} xs={6}>
-      <div
-        className={img}
-        style={{ backgroundImage: `url(${api_featured_image})` }}
-      />
+    <Grid className={wrapper} item md={3} sm={4} xs={12}>
+      <Paper elevation={1} style={{ width: "100%", height: "100%" }}>
+        <div
+          className={img}
+          style={{ backgroundImage: `url(${api_featured_image})` }}
+        />
+      </Paper>
       <div className={footer}>
-        <div className="name">{name}</div>
-        {price > 0 && (
-          <div className="price">
-            {price_sign}
-            {price}
-          </div>
-        )}
+        <div className={productName}>
+          {brand && brand.toUpperCase()} <em>{name}</em>
+        </div>
+
+        {price &&
+          (price == 0 ? (
+            <div className={productPrice}>9.99</div>
+          ) : (
+            <div className={productPrice}>
+              {price.slice(price.indexOf(".")).length === 2
+                ? price + "0"
+                : price}
+            </div>
+          ))}
       </div>
     </Grid>
   );

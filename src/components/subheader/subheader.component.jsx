@@ -1,29 +1,34 @@
 import React from "react";
-import { Box, OutlinedInput } from "@material-ui/core";
+import { OutlinedInput } from "@material-ui/core";
 import { ShoppingCart } from "@material-ui/icons";
 import { makeStyles } from "@material-ui/core/styles";
+import { Link } from "react-router-dom";
 
 const useStyles = makeStyles(theme => ({
   subheader: {
-    width: "95%",
+    width: "80%",
+    margin: "0 auto",
     display: "flex",
-    flexDirection: "row",
+    flexFlow: "row wrap",
     justifyContent: "space-between",
   },
   image: {
-    width: "20%",
-    height: "auto",
+    width: "350px",
+    filter:
+      "invert(4%) sepia(96%) saturate(2391%) hue-rotate(246deg) brightness(104%) contrast(97%)",
   },
   searchWrapper: {
-    display: "inline",
+    display: "flex",
   },
   searchBar: {
-    width: "300px",
-    padding: theme.spacing(-1),
+    display: "inline",
+    width: "400px",
+    height: "45px",
     margin: theme.spacing(2),
   },
   shoppingCart: {
     display: "inline",
+    marginTop: theme.spacing(3),
   },
 }));
 
@@ -36,23 +41,21 @@ const SubHeader = () => {
     searchBar,
   } = useStyles();
   return (
-    <Box component="div" className={subheader}>
-      <img
-        className={image}
-        src={require("../../logos/logo-black.svg")}
-        alt="The Good Beauty logo"
-      />
-      <div className={searchWrapper}>
-        <OutlinedInput
-          className={searchBar}
-          variant="outlined"
-          placeholder="Search..."
+    <div className={subheader} style={{ position: "sticky" }}>
+      <Link to="/">
+        <img
+          className={image}
+          src={require("../../logos/logo-black.svg")}
+          alt="The Good Beauty logo"
         />
-        <p className={shoppingCart}>
+      </Link>
+      <div className={searchWrapper}>
+        <OutlinedInput className={searchBar} placeholder="Search..." />
+        <em className={shoppingCart}>
           0 items in <ShoppingCart />
-        </p>
+        </em>
       </div>
-    </Box>
+    </div>
   );
 };
 

@@ -1,6 +1,18 @@
 import React, { useState } from "react";
 import FormInput from "../form-input/form-input.component";
 import CustomButton from "../Custom-Button/Custom-Button.component";
+import { makeStyles } from "@material-ui/core/styles";
+
+const useStyles = makeStyles(theme => ({
+  signup: {
+    width: "40%",
+    display: "flex",
+    flexDirection: "column",
+  },
+  title: {
+    margin: "10px",
+  },
+}));
 
 const SignUp = () => {
   const [state, setState] = useState({
@@ -22,9 +34,10 @@ const SignUp = () => {
     setState({ [name]: value });
   };
   const { email, password, confirmPassword } = state;
+  const { title, signup } = useStyles();
   return (
-    <div className="sign-up">
-      <h2 className="title">Create an Account</h2>
+    <div className={signup}>
+      <h2 className={title}>Create an Account</h2>
       <span>Sign up to use convenient features and quick checkout.</span>
       <form className="sign-up-form" onSubmit={handleSubmit}>
         <FormInput

@@ -3,9 +3,6 @@ import { Popover, Typography } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles(theme => ({
-  popover: {
-    pointerEvents: "none",
-  },
   paper: {
     padding: theme.spacing(1),
   },
@@ -18,13 +15,11 @@ const HoverLink = ({
   open,
   children,
 }) => {
-  const { popover, paper } = useStyles();
+  const { paper } = useStyles();
   return (
     <div>
       <Popover
-        id="mouse-over-popover"
-        className={popover}
-        classes={{ paper: paper }}
+        classes={{ paper }}
         open={open}
         anchorEl={anchorEl}
         anchorOrigin={{
