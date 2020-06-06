@@ -5,10 +5,10 @@ import ProductCard from "../product-card/product-card.component";
 const ProductCategory = ({ products }) => {
   return (
     <div>
-      <Grid container spacing={8} style={{ width: "80%", margin: "0 auto" }}>
+      <Grid container spacing={8}>
         {products &&
           products.map(({ id, ...otherProps }) => (
-            <ProductCard key={id} {...otherProps} />
+            <ProductCard key={id} id={id} {...otherProps} />
           ))}
       </Grid>
     </div>

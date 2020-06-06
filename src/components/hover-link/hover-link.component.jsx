@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Popover, Typography } from "@material-ui/core";
+import React from "react";
+import { Popover } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles(theme => ({

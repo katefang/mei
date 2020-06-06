@@ -5,15 +5,13 @@ import HoverLink from "../hover-link/hover-link.component";
 import CategoryList from "../category-list/category-list.component";
 import TypeList from "../types/type-list.component";
 import BrandList from "../brands/brand-list.component";
+import { Link } from "react-router-dom";
 
 const useStyles = makeStyles(() => ({
   container: {
     display: "flex",
-    justifyContent: "space-around",
-  },
-  links: {
-    textDecoration: "none",
-    color: "secondary",
+    justifyContent: "space-between",
+    flexFlow: "row wrap",
   },
 }));
 
@@ -46,13 +44,22 @@ const NavBar = () => {
     setOpen3(false);
   };
 
-  const { container, all } = useStyles();
+  const { container } = useStyles();
   return (
     <Container className={container}>
-      {/* <Link className={links} to="/shopall">
-        SHOP ALL
-      </Link> */}
-      <Typography onMouseEnter={e => handlePopoverOpen(e, 1)}>
+      <Typography variant="subtitle1">
+        <Link
+          style={{ color: "#212121", textDecoration: "none" }}
+          to="/shopall"
+        >
+          SHOP ALL
+        </Link>
+      </Typography>
+
+      <Typography
+        variant="subtitle1"
+        onMouseEnter={e => handlePopoverOpen(e, 1)}
+      >
         CATEGORIES
       </Typography>
       <HoverLink
@@ -63,7 +70,10 @@ const NavBar = () => {
         <CategoryList />
       </HoverLink>
 
-      <Typography onMouseEnter={e => handlePopoverOpen(e, 2)}>
+      <Typography
+        variant="subtitle1"
+        onMouseEnter={e => handlePopoverOpen(e, 2)}
+      >
         BRANDS
       </Typography>
       <HoverLink
@@ -74,7 +84,10 @@ const NavBar = () => {
         <BrandList />
       </HoverLink>
 
-      <Typography onMouseEnter={e => handlePopoverOpen(e, 3)}>
+      <Typography
+        variant="subtitle1"
+        onMouseEnter={e => handlePopoverOpen(e, 3)}
+      >
         TYPES
         <HoverLink
           anchorEl={anchorEl}

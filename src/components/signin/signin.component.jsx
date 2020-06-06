@@ -2,20 +2,12 @@ import React, { useState } from "react";
 import FormInput from "../form-input/form-input.component";
 import CustomButton from "../Custom-Button/Custom-Button.component";
 import { makeStyles } from "@material-ui/core/styles";
-import { Typography } from "@material-ui/core";
+import { Typography, Grid } from "@material-ui/core";
 
 const useStyles = makeStyles(theme => ({
-  signIn: {
-    width: "40%",
-    display: "flex",
-    flexDirection: "column",
-  },
   title: {
     marginTop: theme.spacing(1),
-  },
-  buttons: {
-    display: "flex",
-    justifyContent: "space-between",
+    marginBottom: theme.spacing(1),
   },
 }));
 
@@ -34,38 +26,50 @@ const SignIn = () => {
     });
   };
   const { email, password } = state;
-  const { signIn, title, buttons } = useStyles();
+  const { title } = useStyles();
   return (
-    <div className={signIn}>
-      <Typography variant="subtitle1" className={title}>
-        Returning Customer
-      </Typography>
-      <Typography variant="subtitle2">
-        Enter your email and password below to sign in
-      </Typography>
-      <form onSubmit={handleSubmit}>
-        <FormInput
-          name="email"
-          type="email"
-          value={email}
-          handleChange={handleChange}
-          label="email"
-          required
-        />
-        <FormInput
-          name="password"
-          type="password"
-          value={password}
-          handleChange={handleChange}
-          label="password"
-          required
-        />
-        <div className={buttons}>
-          <CustomButton type="submit">SIGN IN</CustomButton>
+    <Grid container item sm={12}>
+      <Grid item xs={12}>
+        <Typography variant="h6" className={title}>
+          Returning Customer
+        </Typography>
+      </Grid>
+      <Grid item xs={12}>
+        <Typography variant="subtitle2">
+          Enter your email and password below to sign in
+        </Typography>
+      </Grid>
+      <Grid container item xs={12}>
+        <Grid item xs={12}>
+          <FormInput
+            name="email"
+            type="email"
+            value={email}
+            handleChange={handleChange}
+            label="email"
+            required
+          />
+        </Grid>
+        <Grid item xs={12}>
+          <FormInput
+            name="password"
+            type="password"
+            value={password}
+            handleChange={handleChange}
+            label="password"
+            required
+          />
+        </Grid>
+
+        <Grid item xs={12} md={4}>
+          <CustomButton type="button">SIGN IN</CustomButton>
+        </Grid>
+
+        <Grid item xs={12} md={7}>
           <CustomButton type="button">SIGN IN WITH GOOGLE</CustomButton>
-        </div>
-      </form>
-    </div>
+        </Grid>
+      </Grid>
+    </Grid>
   );
 };
 

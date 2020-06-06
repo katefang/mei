@@ -13,7 +13,7 @@ const CategoryList = () => {
       <MenuLinks link="/category/lip liner" text="lip liner" />
       <MenuLinks link="/category/lipstick" text="lipstick" />
       <MenuLinks link="/category/mascara" text="mascara" />
-      <MenuLinks link="/category/nail polis" text="nail polis" />
+      <MenuLinks link="/category/nail polish" text="nail polish" />
     </List>
   );
 };

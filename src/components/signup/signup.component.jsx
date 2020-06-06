@@ -2,15 +2,12 @@ import React, { useState } from "react";
 import FormInput from "../form-input/form-input.component";
 import CustomButton from "../Custom-Button/Custom-Button.component";
 import { makeStyles } from "@material-ui/core/styles";
+import { Typography, Grid } from "@material-ui/core";
 
 const useStyles = makeStyles(theme => ({
-  signup: {
-    width: "40%",
-    display: "flex",
-    flexDirection: "column",
-  },
   title: {
-    margin: "10px",
+    marginTop: theme.spacing(1),
+    marginBottom: theme.spacing(1),
   },
 }));
 
@@ -36,10 +33,18 @@ const SignUp = () => {
   const { email, password, confirmPassword } = state;
   const { title, signup } = useStyles();
   return (
-    <div className={signup}>
-      <h2 className={title}>Create an Account</h2>
-      <span>Sign up to use convenient features and quick checkout.</span>
-      <form className="sign-up-form" onSubmit={handleSubmit}>
+    <Grid container item xs={12}>
+      <Grid item xs={12}>
+        <Typography variant="h6" className={title}>
+          Create an Account
+        </Typography>
+      </Grid>
+      <Grid item xs={12}>
+        <Typography variant="subtitle2">
+          Sign up to use convenient features and quick checkout.
+        </Typography>
+      </Grid>
+      <Grid item xs={12}>
         <FormInput
           type="email"
           name="email"
@@ -48,6 +53,8 @@ const SignUp = () => {
           label="email"
           required
         />
+      </Grid>
+      <Grid item xs={12}>
         <FormInput
           type="password"
           name="password"
@@ -56,17 +63,23 @@ const SignUp = () => {
           label="password"
           required
         />
-        <FormInput
-          type="password"
-          name="confirmPassword"
-          value={confirmPassword}
-          onChange={handleChange}
-          label="confirmPassword"
-          required
-        />
-        <CustomButton type="submit">SIGN UP</CustomButton>
-      </form>
-    </div>
+      </Grid>
+      <Grid container item xs={12}>
+        <Grid item xs={12}>
+          <FormInput
+            type="password"
+            name="confirmPassword"
+            value={confirmPassword}
+            onChange={handleChange}
+            label="confirmPassword"
+            required
+          />
+        </Grid>
+        <Grid item xs={12} sm={6} md={8}>
+          <CustomButton type="button">SIGN UP</CustomButton>
+        </Grid>
+      </Grid>
+    </Grid>
   );
 };
 

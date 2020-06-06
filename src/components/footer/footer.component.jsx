@@ -1,32 +1,38 @@
 import React from "react";
-import { Link, BottomNavigation } from "@material-ui/core";
+import { Link } from "@material-ui/core";
 import { LinkedIn, GitHub } from "@material-ui/icons";
 import { makeStyles } from "@material-ui/core/styles";
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles(theme => ({
   footer: {
     textAlign: "center",
     position: "static",
+    bottom: "0",
+    display: "flex",
+    flexFlow: "column",
+    flexDirection: "flex-end",
+  },
+  copyright: {
+    marginTop: theme.spacing(1),
   },
 }));
 
 const Footer = () => {
   const year = new Date().getFullYear();
-  const { footer } = useStyles();
+  const { footer, copyright } = useStyles();
   return (
-    <BottomNavigation className={footer}>
+    <footer className={footer}>
       <div>
-        <p>Hire me</p>
-        <Link href="https://www.linkedin.com/in/katefang33/">
+        <Link target="_blank" href="https://www.linkedin.com/in/katefang33/">
           <LinkedIn />
         </Link>
-        <Link href="https://github.com/katefang">
+        <Link target="_blank" href="https://github.com/katefang">
           <GitHub />
         </Link>
         <br />
-        <p>Copyright © The Good Beauty {year}</p>
+        <p className={copyright}>© The Good Beauty {year}</p>
       </div>
-    </BottomNavigation>
+    </footer>
   );
 };
 

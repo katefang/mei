@@ -2,38 +2,37 @@ import React from "react";
 import SignIn from "../../components/signin/signin.component";
 import SignUp from "../../components/signup/signup.component";
 import { makeStyles } from "@material-ui/core/styles";
-import { Typography } from "@material-ui/core";
+import { Typography, Grid } from "@material-ui/core";
 
 const useStyles = makeStyles(theme => ({
   title: {
-    width: "80%",
-    margin: "0 auto",
     marginTop: theme.spacing(6),
   },
-  div: {
-    width: "80%",
-    display: "flex",
-    justifyContent: "space-between",
-    margin: "0 auto",
-  },
+
   divider: {
-    opacity: "0.3",
+    opacity: "0.4",
+  },
+  wrapper: {
+    width: "90%",
   },
 }));
 const SignInSignUp = () => {
-  const { div, title, divider } = useStyles();
+  const { wrapper, title, divider } = useStyles();
   return (
-    <>
+    <div clasName={wrapper}>
       <Typography className={title} variant="h5">
         SIGN IN / SIGN UP
         <hr className={divider} />
       </Typography>
-      <div className={div}>
-        <SignIn />
-        <hr className={divider} />
-        <SignUp />
-      </div>
-    </>
+      <Grid container>
+        <Grid item xs={12} sm={6}>
+          <SignIn />
+        </Grid>
+        <Grid item xs={12} sm={6}>
+          <SignUp />
+        </Grid>
+      </Grid>
+    </div>
   );
 };
 

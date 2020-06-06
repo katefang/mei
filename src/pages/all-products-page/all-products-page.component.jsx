@@ -1,21 +1,18 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import axios from "axios";
-import { useParams } from "react-router-dom";
 import ProductCategory from "../../components/product-category/product-category.component";
 
-const TypesPage = ({ makeup, setMakeup }) => {
-  const { type } = useParams();
-
+const AllProductsPage = ({ makeup, setMakeup }) => {
   useEffect(() => {
     const fetchData = async () => {
       const response = await axios(
-        `http://makeup-api.herokuapp.com/api/v1/products.json?product_tags=${type}`
+        `http://makeup-api.herokuapp.com/api/v1/products.json?`
       );
       console.log(response);
       setMakeup(response.data);
     };
     fetchData();
-  }, [type]);
+  }, []);
   return (
     <>
       <ProductCategory products={makeup} />
@@ -23,4 +20,4 @@ const TypesPage = ({ makeup, setMakeup }) => {
   );
 };
 
-export default TypesPage;
+export default AllProductsPage;

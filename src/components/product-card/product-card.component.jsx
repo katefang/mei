@@ -1,11 +1,12 @@
 import React from "react";
+import { useHistory } from "react-router-dom";
 import { Grid, Paper } from "@material-ui/core";
 import { makeStyles } from "@material-ui/styles";
 
 const useStyles = makeStyles(theme => ({
   wrapper: {
     flexGrow: "1",
-    height: "26vw",
+    height: "28vw",
   },
 
   img: {
@@ -31,12 +32,20 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-const ProductCard = ({ brand, name, api_featured_image, price }) => {
+const ProductCard = ({ id, brand, name, api_featured_image, price }) => {
   const { img, footer, wrapper, productName, productPrice } = useStyles();
+  const history = useHistory();
+  const handleClick = () => {
+    history.push(`/details/${id}`);
+  };
 
   return (
-    <Grid className={wrapper} item md={3} sm={4} xs={12}>
-      <Paper elevation={1} style={{ width: "100%", height: "100%" }}>
+    <Grid className={wrapper} item md={4} sm={6} xs={12}>
+      <Paper
+        elevation={1}
+        style={{ width: "100%", height: "100%" }}
+        onClick={handleClick}
+      >
         <div
           className={img}
           style={{ backgroundImage: `url(${api_featured_image})` }}

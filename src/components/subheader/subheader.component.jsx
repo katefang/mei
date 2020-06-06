@@ -6,8 +6,6 @@ import { Link } from "react-router-dom";
 
 const useStyles = makeStyles(theme => ({
   subheader: {
-    width: "80%",
-    margin: "0 auto",
     display: "flex",
     flexFlow: "row wrap",
     justifyContent: "space-between",
