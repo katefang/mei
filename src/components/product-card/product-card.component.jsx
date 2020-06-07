@@ -17,6 +17,11 @@ const useStyles = makeStyles(theme => ({
     padding: theme.spacing(2),
     textAlign: "center",
     color: theme.palette.text.secondary,
+    "&:hover": {
+      transform: "scale(1.01)",
+      overflow: "none",
+    },
+    transition: "transform 0.5s ease",
   },
   footer: {
     width: "100%",
@@ -40,7 +45,7 @@ const ProductCard = ({ id, brand, name, api_featured_image, price }) => {
   };
 
   return (
-    <Grid className={wrapper} item md={4} sm={6} xs={12}>
+    <Grid className={wrapper} item md={3} sm={6} xs={12}>
       <Paper
         elevation={1}
         style={{ width: "100%", height: "100%" }}

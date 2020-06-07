@@ -1,22 +1,26 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { ListItem, ListItemText } from "@material-ui/core";
+import { Typography } from "@material-ui/core";
 import { makeStyles } from "@material-ui/styles";
 
 const useStyles = makeStyles(theme => ({
   thing: {
-    textDecoration: "none",
     color: "#212121",
+    display: "flex",
+    padding: theme.spacing(2),
+    "&:hover": {
+      fontWeight: "bold",
+    },
   },
 }));
 
 const MenuLinks = ({ link, text }) => {
   const { thing } = useStyles();
   return (
-    <Link className={thing} to={link}>
-      <ListItem>
-        <ListItemText primary={text} />
-      </ListItem>
+    <Link style={{ textDecoration: "none" }} to={link}>
+      <Typography className={thing} variant="body1">
+        {text}
+      </Typography>
     </Link>
   );
 };

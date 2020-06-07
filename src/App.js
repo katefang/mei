@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import { Route, Switch, useLocation } from "react-router-dom";
-import Homepage from "./pages/homepage/homepage.component";
-import DetailsPage from "./pages/details-page/details-page.component";
-import CategoriesPage from "./pages/categories-page/categories-page.component";
-import BrandsPage from "./pages/brands-page/brands-page.component";
-import TypesPage from "./pages/types-page/types-page.component";
-import SignInSignUp from "./pages/sign-in-sign-up/sign-in-sign-up.component";
-import AllProductsPage from "./pages/all-products-page/all-products-page.component";
+import Homepage from "./pages/homepage/homepage";
+import DetailsPage from "./pages/details-page/details-page";
+import CategoriesPage from "./pages/categories-page/categories-page";
+import BrandsPage from "./pages/brands-page/brands-page";
+import TypesPage from "./pages/types-page/types-page";
+import SignInSignUp from "./pages/sign-in-sign-up/sign-in-sign-up-page";
+import AllProductsPage from "./pages/all-products-page/all-products-page";
+import ProductNotFoundPage from "./pages/product-not-found-page/product-not-found-page";
 import theme from "./App.styles";
 import Header from "../src/components/header/header.component";
 import SubHeader from "../src/components/subheader/subheader.component";
@@ -62,6 +63,10 @@ function App() {
           <Route
             path="/details/:id"
             render={() => <DetailsPage {...{ makeup, setMakeup }} />}
+          />
+          <Route
+            path="/searchsite/:keyword"
+            render={() => <ProductNotFoundPage />}
           />
         </Switch>
         <hr className={divider} />

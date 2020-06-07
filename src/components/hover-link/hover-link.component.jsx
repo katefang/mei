@@ -5,6 +5,7 @@ import { makeStyles } from "@material-ui/core/styles";
 const useStyles = makeStyles(theme => ({
   paper: {
     padding: theme.spacing(1),
+    opacity: "0.98",
   },
 }));
 
@@ -19,7 +20,7 @@ const HoverLink = ({
   return (
     <div>
       <Popover
-        classes={{ paper }}
+        className={paper}
         open={open}
         anchorEl={anchorEl}
         anchorOrigin={{
@@ -28,7 +29,7 @@ const HoverLink = ({
         }}
         transformOrigin={{
           vertical: "top",
-          horizontal: "left",
+          horizontal: "center",
         }}
         PaperProps={{
           onMouseEnter: handlePopoverOpen,

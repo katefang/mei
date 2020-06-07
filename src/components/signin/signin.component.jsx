@@ -16,9 +16,6 @@ const SignIn = () => {
     email: "",
     password: "",
   });
-  const handleSubmit = e => {
-    e.preventDefault();
-  };
   const handleChange = e => {
     const { name, value } = e.target;
     setState({

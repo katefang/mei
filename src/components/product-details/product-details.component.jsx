@@ -8,10 +8,9 @@ import {
   ExpansionPanel,
   ExpansionPanelSummary,
   ExpansionPanelDetails,
-  rating,
   Link,
 } from "@material-ui/core";
-import { ExpandMore } from "@material-ui/icons";
+import { ExpandMore, StarBorder } from "@material-ui/icons";
 import CustomButton from "../Custom-Button/Custom-Button.component";
 
 const useStyles = makeStyles(theme => ({
@@ -33,6 +32,10 @@ const useStyles = makeStyles(theme => ({
     height: "80%",
     marginTop: theme.spacing(3),
   },
+  expansionPanel: {
+    opacity: "0.9",
+    marginTop: theme.spacing(4),
+  },
 }));
 
 const ProductDetails = ({ products }) => {
@@ -48,7 +51,7 @@ const ProductDetails = ({ products }) => {
     tag_list,
     price,
   } = product;
-  const { heading, image, wrapper, textWrapper } = useStyles();
+  const { heading, image, wrapper, textWrapper, expansionPanel } = useStyles();
   const [num, setNum] = useState(1);
 
   const handleChange = e => {
@@ -70,7 +73,7 @@ const ProductDetails = ({ products }) => {
               item
               xs={12}
               sm={6}
-              spacing={3}
+              spacing={4}
             >
               <Grid item xs={12}>
                 {brand && (
@@ -80,6 +83,11 @@ const ProductDetails = ({ products }) => {
 
               <Grid item xs={12}>
                 <Typography variant="subtitle1">{name}</Typography>
+              </Grid>
+
+              <Grid item xs={12}>
+                <StarBorder /> <StarBorder /> <StarBorder /> <StarBorder />{" "}
+                <StarBorder /> <em> No reviews yet</em>
               </Grid>
               <Grid item xs={12}>
                 {price &&
@@ -120,7 +128,7 @@ const ProductDetails = ({ products }) => {
               </Grid>
             </Grid>
           </Grid>
-          <ExpansionPanel>
+          <ExpansionPanel className={expansionPanel}>
             <ExpansionPanelSummary expandIcon={<ExpandMore />}>
               <Typography className={heading} variant="body1">
                 PRODUCT DETAILS

@@ -13,7 +13,6 @@ const useStyles = makeStyles(theme => ({
 
 const SignUp = () => {
   const [state, setState] = useState({
-    displayName: "",
     email: "",
     password: "",
     confirmPassword: "",
@@ -31,7 +30,7 @@ const SignUp = () => {
     setState({ [name]: value });
   };
   const { email, password, confirmPassword } = state;
-  const { title, signup } = useStyles();
+  const { title } = useStyles();
   return (
     <Grid container item xs={12}>
       <Grid item xs={12}>

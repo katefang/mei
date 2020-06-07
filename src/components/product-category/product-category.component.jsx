@@ -5,7 +5,7 @@ import ProductCard from "../product-card/product-card.component";
 const ProductCategory = ({ products }) => {
   return (
     <div>
-      <Grid container spacing={8}>
+      <Grid container spacing={8} style={{ marginTop: "20px" }}>
         {products &&
           products.map(({ id, ...otherProps }) => (
             <ProductCard key={id} id={id} {...otherProps} />

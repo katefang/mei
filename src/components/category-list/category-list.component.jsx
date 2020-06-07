@@ -1,20 +1,31 @@
 import React from "react";
 import MenuLinks from "../menu-links/menu-links.component";
-import { List } from "@material-ui/core";
+import { makeStyles } from "@material-ui/styles";
+
+const useStyles = makeStyles(theme => ({
+  listItems: {
+    width: "20vw",
+    display: "flex",
+    flexFlow: "row Wrap",
+    padding: theme.spacing(1, 0, 1, 1),
+    justifyContent: "start",
+  },
+}));
 
 const CategoryList = () => {
+  const { listItems } = useStyles();
   return (
-    <List component="nav">
-      <MenuLinks link="/category/blush" text="blush" />
-      <MenuLinks link="/category/eyebrow" text="eyebrow" />
-      <MenuLinks link="/category/eyeliner" text="eyeliner" />
-      <MenuLinks link="/category/eyeshadow" text="eyeshadow" />
-      <MenuLinks link="/category/foundation" text="foundation" />
-      <MenuLinks link="/category/lip liner" text="lip liner" />
-      <MenuLinks link="/category/lipstick" text="lipstick" />
-      <MenuLinks link="/category/mascara" text="mascara" />
-      <MenuLinks link="/category/nail polish" text="nail polish" />
-    </List>
+    <div className={listItems} component="nav">
+      <MenuLinks link="/category/blush" text="Blush" />
+      <MenuLinks link="/category/eyebrow" text="Eyebrow" />
+      <MenuLinks link="/category/eyeliner" text="Eyeliner" />
+      <MenuLinks link="/category/eyeshadow" text="Eyeshadow" />
+      <MenuLinks link="/category/foundation" text="Foundation" />
+      <MenuLinks link="/category/lip liner" text="Lip Liner" />
+      <MenuLinks link="/category/lipstick" text="Lipstick" />
+      <MenuLinks link="/category/mascara" text="Mascara" />
+      <MenuLinks link="/category/nail polish" text="Nail Polish" />
+    </div>
   );
 };
 

@@ -1,10 +1,21 @@
 import React from "react";
 import MenuLinks from "../menu-links/menu-links.component";
 import { List } from "@material-ui/core";
+import { makeStyles } from "@material-ui/styles";
 
+const useStyles = makeStyles(theme => ({
+  listItems: {
+    width: "31vw",
+    display: "flex",
+    flexFlow: "row wrap",
+    padding: theme.spacing(1, 0, 1, 1),
+    justifyContent: "start",
+  },
+}));
 const TypeList = () => {
+  const { listItems } = useStyles();
   return (
-    <List component="nav">
+    <div className={listItems}>
       <MenuLinks link="/types/Canadian" text="Canadian" />
       <MenuLinks link="/types/CertClean" text="Certified Clean" />
       <MenuLinks link="/types/Chemical Free" text="Chemical Free" />
@@ -29,7 +40,7 @@ const TypeList = () => {
       <MenuLinks link="/types/purpicks" text="purpicks" />
       <MenuLinks link="/types/Silicone Free" text="Silicone Free" />
       <MenuLinks link="/types/Water Free" text="Water Free" />
-    </List>
+    </div>
   );
 };
 

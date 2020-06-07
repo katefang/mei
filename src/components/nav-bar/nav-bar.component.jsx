@@ -7,8 +7,9 @@ import TypeList from "../types/type-list.component";
 import BrandList from "../brands/brand-list.component";
 import { Link } from "react-router-dom";
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles(theme => ({
   container: {
+    margin: theme.spacing(2),
     display: "flex",
     justifyContent: "space-between",
     flexFlow: "row wrap",
