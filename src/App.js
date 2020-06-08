@@ -8,7 +8,7 @@ import TypesPage from "./pages/types-page/types-page";
 import SignInSignUp from "./pages/sign-in-sign-up/sign-in-sign-up-page";
 import AllProductsPage from "./pages/all-products-page/all-products-page";
 import ProductNotFoundPage from "./pages/product-not-found-page/product-not-found-page";
-import theme from "./App.styles";
+import theme from "./App.styles.js";
 import Header from "../src/components/header/header.component";
 import SubHeader from "../src/components/subheader/subheader.component";
 import NavBar from "../src/components/nav-bar/nav-bar.component";

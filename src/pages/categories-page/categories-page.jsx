@@ -11,7 +11,6 @@ const CategoriesPage = ({ makeup, setMakeup }) => {
       const response = await axios(
         `http://makeup-api.herokuapp.com/api/v1/products.json?product_type=${category}`
       );
-      console.log(response.data);
       setMakeup(response.data);
     };
     fetchData();

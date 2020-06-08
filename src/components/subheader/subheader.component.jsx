@@ -15,7 +15,7 @@ const useStyles = makeStyles(theme => ({
     justifyContent: "space-between",
   },
   image: {
-    width: "380px",
+    width: "420px",
     filter:
       "invert(4%) sepia(96%) saturate(2391%) hue-rotate(246deg) brightness(104%) contrast(97%)",
   },
@@ -62,6 +62,8 @@ const SubHeader = () => {
       history.push("/brand/e.l.f.");
     } else if (searchInput.toLowerCase() === "certified clean") {
       history.push("/types/CertClean");
+    } else if (searchInput.toLowerCase() === "wellpeople") {
+      history.push("/brand/w3llpeople");
     } else {
       history.push(`/searchsite/${searchInput}`);
     }
