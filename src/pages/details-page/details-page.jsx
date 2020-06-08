@@ -1,8 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import ProductDetails from "../../components/product-details/product-details.component";
 
-const DetailsPage = ({ makeup }) => {
-  return <>{makeup && <ProductDetails products={makeup} />}</>;
+const DetailsPage = () => {
+  return (
+    <>
+      <ProductDetails />
+    </>
+  );
 };
 
 export default DetailsPage;

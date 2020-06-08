@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
+import { ProductsContext } from "../../context/products-context";
 import { makeStyles } from "@material-ui/core/styles";
-import TypeNames from "../types/type-names";
 import {
   FormGroup,
   FormControlLabel,
@@ -8,7 +8,9 @@ import {
   Typography,
 } from "@material-ui/core";
 
-const FilterByConcerns = ({ products, setData }) => {
+const FilterByConcerns = () => {
+  const { products, setFiltered } = useContext(ProductsContext);
+
   const [filters, setFilters] = useState([]);
   const [state, setState] = useState({
     Canadian: false,
@@ -50,9 +52,9 @@ const FilterByConcerns = ({ products, setData }) => {
             next.push(item);
           }
         });
-        setData(next);
+        setFiltered(next);
       } else {
-        setData(products);
+        setFiltered(products);
       }
     }
   }, [filters]);

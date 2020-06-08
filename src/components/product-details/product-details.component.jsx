@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { useParams } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
+import { ProductsContext } from "../../context/products-context";
 import {
   Grid,
   Typography,
@@ -38,9 +39,11 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-const ProductDetails = ({ products }) => {
+const ProductDetails = () => {
+  const { products } = useContext(ProductsContext);
+
   const { id } = useParams();
-  const product = products.find(item => item.id == id);
+  const data = products.find(item => item.id == id);
   const nums = [1, 2, 3, 4, 5, 6, 7, 8, 9];
   // const {
   //   api_featured_image,
@@ -60,14 +63,14 @@ const ProductDetails = ({ products }) => {
 
   return (
     <>
-      {product && (
+      {data && (
         <div>
           <Grid container spacing={2} className={wrapper}>
             <Grid item xs={12} sm={6}>
               <img
                 className={image}
-                src={products.api_featured_image}
-                alt={products.name}
+                src={data.api_featured_image}
+                alt={data.name}
               />
             </Grid>
 
@@ -80,15 +83,15 @@ const ProductDetails = ({ products }) => {
               spacing={4}
             >
               <Grid item xs={12}>
-                {products.brand && (
+                {data.brand && (
                   <Typography variant="h6">
-                    {products.brand.toUpperCase()}
+                    {data.brand.toUpperCase()}
                   </Typography>
                 )}
               </Grid>
 
               <Grid item xs={12}>
-                <Typography variant="subtitle1">{products.name}</Typography>
+                <Typography variant="subtitle1">{data.name}</Typography>
               </Grid>
 
               <Grid item xs={12}>
@@ -96,16 +99,15 @@ const ProductDetails = ({ products }) => {
                 <StarBorder /> <em> No reviews yet</em>
               </Grid>
               <Grid item xs={12}>
-                {products.price &&
-                  (products.price == 0 ? (
+                {data.price &&
+                  (data.price == 0 ? (
                     <div>$9.99</div>
                   ) : (
                     <div>
                       $
-                      {products.price.slice(products.price.indexOf("."))
-                        .length === 2
-                        ? products.price + "0"
-                        : products.price}
+                      {data.price.slice(data.price.indexOf(".")).length === 2
+                        ? data.price + "0"
+                        : data.price}
                     </div>
                   ))}
               </Grid>
@@ -144,30 +146,22 @@ const ProductDetails = ({ products }) => {
             <ExpansionPanelDetails>
               <Grid container spacing={4}>
                 <Grid item xs={12} sm={6}>
-                  <Typography>{products.description}</Typography>
+                  <Typography>{data.description}</Typography>
                 </Grid>
                 <Grid item xs={12} sm={6}>
-                  {products.tag_list.length > 0 && (
+                  {data.tag_list && data.tag_list.length > 0 && (
                     <Typography variant="body1">
                       Concerns:
-                      {products.tag_list[0] && <em> {products.tag_list[0]}</em>}
-                      {products.tag_list[1] && (
-                        <em>, {products.tag_list[1]}</em>
-                      )}
-                      {products.tag_list[2] && (
-                        <em>, {products.tag_list[2]}</em>
-                      )}
-                      {products.tag_list[3] && (
-                        <em>, {products.tag_list[3]}</em>
-                      )}
-                      {products.tag_list[4] && (
-                        <em>, {products.tag_list[4]}</em>
-                      )}
+                      {data.tag_list[0] && <em> {data.tag_list[0]}</em>}
+                      {data.tag_list[1] && <em>, {data.tag_list[1]}</em>}
+                      {data.tag_list[2] && <em>, {data.tag_list[2]}</em>}
+                      {data.tag_list[3] && <em>, {data.tag_list[3]}</em>}
+                      {data.tag_list[4] && <em>, {data.tag_list[4]}</em>}
                     </Typography>
                   )}
                 </Grid>
                 <Grid item xs={12} sm={6}>
-                  <Link target="_blank" href={products.product_link}>
+                  <Link target="_blank" href={data.product_link}>
                     LEARN MORE
                   </Link>
                 </Grid>

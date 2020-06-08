@@ -1,6 +1,5 @@
 import React from "react";
 import { Grid } from "@material-ui/core";
-import { useHistory } from "react-router-dom";
 import CategoryNameContainer from "./category-name-container.component";
 import CategoryName from "../category-list/category-names";
 

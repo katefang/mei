@@ -15,6 +15,7 @@ import NavBar from "../src/components/nav-bar/nav-bar.component";
 import Footer from "../src/components/footer/footer.component";
 import { MuiThemeProvider, CssBaseline } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core";
+import ProductsContextProvider from "./context/products-context";
 
 const useStyles = makeStyles(theme => ({
   divider: {
@@ -31,48 +32,37 @@ const useStyles = makeStyles(theme => ({
 function App() {
   const { pathname } = useLocation();
   const { divider, body } = useStyles();
-  const [makeup, setMakeup] = useState();
 
   return (
-    <MuiThemeProvider theme={theme}>
-      <CssBaseline />
-      <Header />
-      <div className={body}>
-        <SubHeader />
-        {pathname !== "/signin" && <NavBar />}
-        <Switch>
-          <Route exact path="/" component={Homepage} />
-          <Route
-            path="/shopall"
-            render={() => <AllProductsPage {...{ makeup, setMakeup }} />}
-          />
-          <Route
-            exact
-            path="/category/:category"
-            render={() => <CategoriesPage {...{ makeup, setMakeup }} />}
-          />
-          <Route
-            path="/brand/:brand"
-            render={() => <BrandsPage {...{ makeup, setMakeup }} />}
-          />
-          <Route
-            path="/types/:type"
-            render={() => <TypesPage {...{ makeup, setMakeup }} />}
-          />
-          <Route path="/signin" component={SignInSignUp} />
-          <Route
-            path="/details/:id"
-            render={() => <DetailsPage {...{ makeup, setMakeup }} />}
-          />
-          <Route
-            path="/searchsite/:keyword"
-            render={() => <ProductNotFoundPage />}
-          />
-        </Switch>
-        <hr className={divider} />
-      </div>
-      <Footer />
-    </MuiThemeProvider>
+    <ProductsContextProvider>
+      <MuiThemeProvider theme={theme}>
+        <CssBaseline />
+        <Header />
+        <div className={body}>
+          <SubHeader />
+          {pathname !== "/signin" && <NavBar />}
+          <Switch>
+            <Route exact path="/" component={Homepage} />
+            <Route path="/shopall" component={AllProductsPage} />
+            <Route
+              exact
+              path="/category/:category"
+              component={CategoriesPage}
+            />
+            <Route path="/brand/:brand" component={BrandsPage} />
+            <Route path="/types/:type" component={TypesPage} />
+            <Route path="/signin" component={SignInSignUp} />
+            <Route path="/details/:id" component={DetailsPage} />
+            <Route
+              path="/searchsite/:keyword"
+              component={ProductNotFoundPage}
+            />
+          </Switch>
+          <hr className={divider} />
+        </div>
+        <Footer />
+      </MuiThemeProvider>
+    </ProductsContextProvider>
   );
 }
 

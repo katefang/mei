@@ -1,9 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useContext } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import ProductCategory from "../../components/product-category/product-category.component";
+import { ProductsContext } from "../../context/products-context";
 
-const CategoriesPage = ({ makeup, setMakeup }) => {
+const CategoriesPage = () => {
+  const { products, setProducts, setFiltered } = useContext(ProductsContext);
   const { category } = useParams();
 
   useEffect(() => {
@@ -11,13 +13,14 @@ const CategoriesPage = ({ makeup, setMakeup }) => {
       const response = await axios(
         `https://makeup-api.herokuapp.com/api/v1/products.json?product_type=${category}`
       );
-      setMakeup(response.data);
+      setProducts(response.data);
+      setFiltered(response.data);
     };
     fetchData();
   }, [category]);
   return (
     <>
-      <ProductCategory products={makeup} />
+      <ProductCategory products={products} />
     </>
   );
 };
