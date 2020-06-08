@@ -8,7 +8,7 @@ const BrandsPage = ({ makeup, setMakeup }) => {
   useEffect(() => {
     const fetchData = async () => {
       const response = await axios.get(
-        `http://makeup-api.herokuapp.com/api/v1/products.json?brand=${brand}`
+        `https://makeup-api.herokuapp.com/api/v1/products.json?brand=${brand}`
       );
       console.log(response);
       setMakeup(response.data);

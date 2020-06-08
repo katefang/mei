@@ -9,7 +9,7 @@ const TypesPage = ({ makeup, setMakeup }) => {
   useEffect(() => {
     const fetchData = async () => {
       const response = await axios(
-        `http://makeup-api.herokuapp.com/api/v1/products.json?product_tags=${type}`
+        `https://makeup-api.herokuapp.com/api/v1/products.json?product_tags=${type}`
       );
       console.log(response);
       setMakeup(response.data);
