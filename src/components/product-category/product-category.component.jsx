@@ -15,7 +15,7 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const ProductCategory = () => {
-  const { products, filtered } = useContext(ProductsContext);
+  const { filtered } = useContext(ProductsContext);
 
   const { outerContainer, sidebar } = useStyles();
   return (
@@ -25,8 +25,8 @@ const ProductCategory = () => {
           <SideBar />
         </Grid>
         <Grid container item spacing={8} style={{ marginTop: "20px" }}>
-          {products &&
-            products.map(({ id, ...otherProps }) => (
+          {filtered &&
+            filtered.map(({ id, ...otherProps }) => (
               <ProductCard key={id} id={id} {...otherProps} />
             ))}
         </Grid>
