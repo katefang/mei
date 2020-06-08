@@ -47,8 +47,8 @@ const NavBar = () => {
 
   const { container } = useStyles();
   return (
-    <Container className={container}>
-      <Typography variant="subtitle1">
+    <div className={container}>
+      <Typography variant="subtitle2">
         <Link
           style={{ color: "#212121", textDecoration: "none" }}
           to="/shopall"
@@ -58,7 +58,7 @@ const NavBar = () => {
       </Typography>
 
       <Typography
-        variant="subtitle1"
+        variant="subtitle2"
         onMouseEnter={e => handlePopoverOpen(e, 1)}
       >
         CATEGORIES
@@ -72,7 +72,7 @@ const NavBar = () => {
       </HoverLink>
 
       <Typography
-        variant="subtitle1"
+        variant="subtitle2"
         onMouseEnter={e => handlePopoverOpen(e, 2)}
       >
         BRANDS
@@ -86,7 +86,7 @@ const NavBar = () => {
       </HoverLink>
 
       <Typography
-        variant="subtitle1"
+        variant="subtitle2"
         onMouseEnter={e => handlePopoverOpen(e, 3)}
       >
         TYPES
@@ -98,7 +98,7 @@ const NavBar = () => {
           <TypeList />
         </HoverLink>
       </Typography>
-    </Container>
+    </div>
   );
 };
 

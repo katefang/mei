@@ -4,7 +4,7 @@ import { makeStyles } from "@material-ui/styles";
 
 const useStyles = makeStyles(theme => ({
   container: {
-    width: "80%",
+    // width: "80%",
     margin: "0 auto",
     marginTop: theme.spacing(4),
   },
@@ -12,7 +12,7 @@ const useStyles = makeStyles(theme => ({
     display: "grid",
     gridTemplateColumns: "repeat(6, 1fr)",
     gridTemplateRows: "repeat(6, 5vw)",
-    gridGap: theme.spacing(1),
+    gridGap: theme.spacing(2),
   },
   image: {
     width: "100%",

@@ -13,13 +13,13 @@ const useStyles = makeStyles(theme => ({
     opacity: "0.4",
   },
   wrapper: {
-    width: "90%",
+    margin: "auto",
   },
 }));
 const SignInSignUp = () => {
   const { wrapper, title, divider } = useStyles();
   return (
-    <div clasName={wrapper}>
+    <div className={wrapper}>
       <Typography className={title} variant="h5">
         SIGN IN / SIGN UP
         <hr className={divider} />

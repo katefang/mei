@@ -8,7 +8,8 @@ import { makeStyles } from "@material-ui/styles";
 const useStyles = makeStyles(theme => ({
   wrapper: {
     flexGrow: "1",
-    height: "28vw",
+    width: "32vw",
+    height: "53vh",
   },
 
   img: {
@@ -47,7 +48,7 @@ const ProductCard = ({ id, brand, name, api_featured_image, price }) => {
   };
 
   return (
-    <Grid className={wrapper} item md={3} sm={6} xs={12}>
+    <Grid className={wrapper} item md={4} sm={6} xs={12}>
       <Paper
         elevation={1}
         style={{ width: "100%", height: "100%" }}
