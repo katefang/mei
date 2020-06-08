@@ -174,11 +174,11 @@ src
 
 | Task                                    | Priority | Estimated Time | Time Invested | Actual Time |
 | --------------------------------------- | :------: | :------------: | :-----------: | :---------: |
-| Create pages (shop/product/sign in)     |    H     |     10 hrs     |      TBD      |     TBD     |
-| Create components to be reused in pages |    H     |     10 hrs     |      TBD      |     TBD     |
-| Implement Firebase auth and login       |    H     |     10 hrs     |      TBD      |     TBD     |
-| CSS                                     |    H     |     15 hrs     |      TBD      |     TBD     |
-| TOTAL                                   |          |     45 hrs     |      TBD      |     TBD     |
+| Create pages (shop/product/sign in)     |    H     |     10 hrs     |       8       |     10      |
+| Create components to be reused in pages |    H     |     10 hrs     |      16       |     16      |
+| Implement Firebase auth and login       |    H     |     10 hrs     |       0       |      0      |
+| CSS                                     |    H     |     15 hrs     |      20       |     20      |
+| TOTAL                                   |          |     45 hrs     |      44       |     44      |
 
 <br>
 
@@ -186,9 +186,22 @@ src
 
 > Use this section to document all helper functions, i.e. generic functions that can be reused in other applications.
 
-|  Function  | Description                                |
-| :--------: | :----------------------------------------- |
-| Capitalize | _Lorem ipsum dolor sit amet, consectetur._ |
+| Function | Description |
+| :------: | :---------- |
+
+
+| const CustomButton = ({ children, ...otherProps }) => {
+const { button } = useStyles();
+return (
+<Button
+className={button}
+variant="contained"
+color="primary"
+{...otherProps} >
+{children}
+</Button>
+);
+}; | This is a custom made button component that could be used for any project from here on. |
 
 <br>
 
@@ -206,7 +219,25 @@ src
 ### Code Showcase
 
 ```
-code snippet here
+const ProductNotFoundPage = () => {
+  const { keyword } = useParams();
+  const { wrapper, list } = useStyles();
+  return (
+    <div className={wrapper}>
+      <Typography variant="h3" textSecondary>
+        SORRY!
+      </Typography>
+      <Typography variant="h6">
+        We couldn't find any search results for "{keyword}"
+      </Typography>
+      <ul className={list}>
+        <li>Check for typos or misspellings</li>
+        <li>Search for brands, concerns, or products</li>
+      </ul>
+    </div>
+  );
+};
+
 ```
 
 ### Code Issues & Resolutions
