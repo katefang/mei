@@ -42,15 +42,15 @@ const ProductDetails = ({ products }) => {
   const { id } = useParams();
   const product = products.find(item => item.id == id);
   const nums = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-  const {
-    api_featured_image,
-    name,
-    brand,
-    product_link,
-    description,
-    tag_list,
-    price,
-  } = product;
+  // const {
+  //   api_featured_image,
+  //   name,
+  //   brand,
+  //   product_link,
+  //   description,
+  //   tag_list,
+  //   price,
+  // } = product;
   const { heading, image, wrapper, textWrapper, expansionPanel } = useStyles();
   const [num, setNum] = useState(1);
 
@@ -64,7 +64,11 @@ const ProductDetails = ({ products }) => {
         <div>
           <Grid container spacing={2} className={wrapper}>
             <Grid item xs={12} sm={6}>
-              <img className={image} src={api_featured_image} alt={name} />
+              <img
+                className={image}
+                src={products.api_featured_image}
+                alt={products.name}
+              />
             </Grid>
 
             <Grid
@@ -76,13 +80,15 @@ const ProductDetails = ({ products }) => {
               spacing={4}
             >
               <Grid item xs={12}>
-                {brand && (
-                  <Typography variant="h6">{brand.toUpperCase()}</Typography>
+                {products.brand && (
+                  <Typography variant="h6">
+                    {products.brand.toUpperCase()}
+                  </Typography>
                 )}
               </Grid>
 
               <Grid item xs={12}>
-                <Typography variant="subtitle1">{name}</Typography>
+                <Typography variant="subtitle1">{products.name}</Typography>
               </Grid>
 
               <Grid item xs={12}>
@@ -90,15 +96,16 @@ const ProductDetails = ({ products }) => {
                 <StarBorder /> <em> No reviews yet</em>
               </Grid>
               <Grid item xs={12}>
-                {price &&
-                  (price == 0 ? (
+                {products.price &&
+                  (products.price == 0 ? (
                     <div>$9.99</div>
                   ) : (
                     <div>
                       $
-                      {price.slice(price.indexOf(".")).length === 2
-                        ? price + "0"
-                        : price}
+                      {products.price.slice(products.price.indexOf("."))
+                        .length === 2
+                        ? products.price + "0"
+                        : products.price}
                     </div>
                   ))}
               </Grid>
@@ -137,22 +144,30 @@ const ProductDetails = ({ products }) => {
             <ExpansionPanelDetails>
               <Grid container spacing={4}>
                 <Grid item xs={12} sm={6}>
-                  <Typography>{description}</Typography>
+                  <Typography>{products.description}</Typography>
                 </Grid>
                 <Grid item xs={12} sm={6}>
-                  {tag_list.length > 0 && (
+                  {products.tag_list.length > 0 && (
                     <Typography variant="body1">
                       Concerns:
-                      {tag_list[0] && <em> {tag_list[0]}</em>}
-                      {tag_list[1] && <em>, {tag_list[1]}</em>}
-                      {tag_list[2] && <em>, {tag_list[2]}</em>}
-                      {tag_list[3] && <em>, {tag_list[3]}</em>}
-                      {tag_list[4] && <em>, {tag_list[4]}</em>}
+                      {products.tag_list[0] && <em> {products.tag_list[0]}</em>}
+                      {products.tag_list[1] && (
+                        <em>, {products.tag_list[1]}</em>
+                      )}
+                      {products.tag_list[2] && (
+                        <em>, {products.tag_list[2]}</em>
+                      )}
+                      {products.tag_list[3] && (
+                        <em>, {products.tag_list[3]}</em>
+                      )}
+                      {products.tag_list[4] && (
+                        <em>, {products.tag_list[4]}</em>
+                      )}
                     </Typography>
                   )}
                 </Grid>
                 <Grid item xs={12} sm={6}>
-                  <Link target="_blank" href={product_link}>
+                  <Link target="_blank" href={products.product_link}>
                     LEARN MORE
                   </Link>
                 </Grid>
