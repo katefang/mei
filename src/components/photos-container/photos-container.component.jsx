@@ -4,7 +4,6 @@ import { makeStyles } from "@material-ui/styles";
 
 const useStyles = makeStyles(theme => ({
   container: {
-    // width: "80%",
     margin: "0 auto",
     marginTop: theme.spacing(4),
   },

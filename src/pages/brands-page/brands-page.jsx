@@ -10,7 +10,6 @@ const BrandsPage = ({ makeup, setMakeup }) => {
       const response = await axios.get(
         `https://makeup-api.herokuapp.com/api/v1/products.json?brand=${brand}`
       );
-      console.log(response);
       setMakeup(response.data);
     };
     fetchData();

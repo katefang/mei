@@ -7,9 +7,8 @@ import { makeStyles } from "@material-ui/styles";
 
 const useStyles = makeStyles(theme => ({
   wrapper: {
-    flexGrow: "1",
-    width: "32vw",
-    height: "53vh",
+    width: "320px",
+    height: "450px",
   },
 
   img: {

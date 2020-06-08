@@ -9,7 +9,7 @@ const ShopByCategory = () => {
     <Grid
       container
       spacing={2}
-      style={{ margin: "10px", justifyContent: "space-evenly" }}
+      style={{ margin: "10px", justifyContent: "space-between" }}
     >
       <CategoryNameContainer name={CategoryName[0]}>
         {CategoryName[0]}

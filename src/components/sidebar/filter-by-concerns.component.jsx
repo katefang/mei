@@ -2,18 +2,14 @@ import React, { useState, useEffect } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import TypeNames from "../types/type-names";
 import {
-  FormLabel,
-  FormControl,
   FormGroup,
   FormControlLabel,
   Checkbox,
   Typography,
 } from "@material-ui/core";
-import { CheckBox, Filter } from "@material-ui/icons";
 
-const FilterByConcerns = ({ products }) => {
+const FilterByConcerns = ({ products, setData }) => {
   const [filters, setFilters] = useState([]);
-  const [filtered, setFiltered] = useState(products);
   const [state, setState] = useState({
     Canadian: false,
     CertClean: false,
@@ -26,7 +22,7 @@ const FilterByConcerns = ({ products }) => {
     Hypoallergenic: false,
     Natural: false,
     NoTalc: false,
-    "Non GMO": false,
+    "Non-GMO": false,
     Organic: false,
     "Peanut Free Product": false,
     "Sugar Free": false,
@@ -40,42 +36,40 @@ const FilterByConcerns = ({ products }) => {
     "water free": false,
   });
 
-  const filterData = () => {
-    const filteredData = [];
-    if (products) {
-      const data = products.filter(product => product.tag_list.length > 0);
-      data.forEach(item => {
-        if (filteredData.length === 0) {
-          item.tag_list.forEach(thing => {
-            if (filters.includes(thing)) {
-              filteredData.push(item);
-            }
-          });
-        }
-      });
-    }
-    console.log(filteredData);
-  };
-
   useEffect(() => {
-    const arr = [];
-    for (let item in state) {
-      if (state[item]) {
-        arr.push(item);
+    if (products) {
+      if (filters.length) {
+        let next = [];
+        products.forEach(item => {
+          if (
+            filters.reduce(
+              (acc, curr) => acc && item.tag_list.includes(curr),
+              true
+            )
+          ) {
+            next.push(item);
+          }
+        });
+        setData(next);
+      } else {
+        setData(products);
       }
     }
-    setFilters(arr);
-    filterData();
-  }, [state]);
+  }, [filters]);
 
   const handleChange = e => {
     setState({ ...state, [e.target.name]: e.target.checked });
+    if (filters.includes(e.target.name)) {
+      setFilters(filters.filter(item => item !== e.target.name));
+    } else {
+      setFilters([...filters, e.target.name]);
+    }
   };
   return (
     <>
       <Typography variant="body2">CONCERN</Typography>
       <hr />
-      <FormGroup column>
+      <FormGroup column="true">
         <FormControlLabel
           control={
             <Checkbox
@@ -198,9 +192,9 @@ const FilterByConcerns = ({ products }) => {
         <FormControlLabel
           control={
             <Checkbox
-              checked={state["NonGMO"]}
+              checked={state["Non-GMO"]}
               onChange={handleChange}
-              name="Non GMO"
+              name="Non-GMO"
             />
           }
           label="Non GMO"
