@@ -1,4 +1,6 @@
-## The Good Beauty
+## [The Good Beauty](https://jovial-fermi-9b4af1.netlify.app/)
+
+
 
 - [Project Planning](#project-planning)
   - [Overview](#overview)
