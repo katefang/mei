@@ -70,7 +70,6 @@ The Good Beauty is an e-commerce site for beauty products. The site is built on 
 
 #### Libraries
 
-> Use this section to list all supporting libraries and their role in the project.
 
 |       Library       | Description                                   |
 | :-----------------: | :-------------------------------------------- |
@@ -82,8 +81,6 @@ The Good Beauty is an e-commerce site for beauty products. The site is built on 
 <br>
 
 #### Data
-
-> Use the Data Section to define the API(s) you will be consuming for your project, inluding sample URL queries.
 
 |    API     | Quality Docs? | Website                             | Sample Query                                                          |
 | :--------: | :-----------: | :---------------------------------- | :-------------------------------------------------------------------- |
@@ -155,7 +152,6 @@ src
 
 #### Component Breakdown
 
-> Use this section to go into further depth regarding your components, including breaking down the components as stateless or stateful, and considering the passing of data between those components.
 
 |      Component       |    Type    | State | Props | Description                                                                                 |
 | :------------------: | :--------: | :---: | :---: | :------------------------------------------------------------------------------------------ |
@@ -170,9 +166,6 @@ src
 
 #### Component Estimates
 
-> Use this section to estimate the time necessary to build out each of the components you've described above.
->
-> Time frames are key to the development cycle. You have limited time to code your app, and your estimates can then be used to evalute possibilities of your MVP and post-MVP based on time needed. It's best you assume an additional hour for each component, as well as a few hours added to the total time, to play it safe.
 
 | Task                                    | Priority | Estimated Time | Time Invested | Actual Time |
 | --------------------------------------- | :------: | :------------: | :-----------: | :---------: |
@@ -183,13 +176,6 @@ src
 | TOTAL                                   |          |     45 hrs     |      44       |     44      |
 
 <br>
-
-#### Helper Functions
-
-> Use this section to document all helper functions, i.e. generic functions that can be reused in other applications.
-
-| Function | Description |
-| :------: | :---------- |
 
 
 | const CustomButton = ({ children, ...otherProps }) => {
@@ -205,12 +191,6 @@ color="primary"
 );
 }; | This is a custom made button component that could be used for any project from here on. |
 
-<br>
-
-### Post-MVP
-
-- Implement add to cart functionality
-- Add user auth capabilities
 
 <br>
 
