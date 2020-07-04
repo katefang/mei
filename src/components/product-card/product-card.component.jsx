@@ -1,42 +1,42 @@
-import React from "react";
-import { useHistory } from "react-router-dom";
-import SideBar from "../sidebar/sidebar.component";
+import React from 'react';
+import { useHistory } from 'react-router-dom';
+import SideBar from '../sidebar/sidebar.component';
 
-import { Grid, Paper } from "@material-ui/core";
-import { makeStyles } from "@material-ui/styles";
+import { Grid, Paper } from '@material-ui/core';
+import { makeStyles } from '@material-ui/styles';
 
 const useStyles = makeStyles(theme => ({
   wrapper: {
-    width: "320px",
-    height: "450px",
+    width: '280px',
+    height: '400px'
   },
 
   img: {
-    backgroundSize: "cover",
-    backgroundPosition: "Center",
-    width: "100%",
-    height: "100%",
+    backgroundSize: 'cover',
+    backgroundPosition: 'Center',
+    width: '100%',
+    height: '100%',
     padding: theme.spacing(2),
-    textAlign: "center",
+    textAlign: 'center',
     color: theme.palette.text.secondary,
-    "&:hover": {
-      transform: "scale(1.01)",
-      overflow: "none",
+    '&:hover': {
+      transform: 'scale(1.01)',
+      overflow: 'none'
     },
-    transition: "transform 0.5s ease",
+    transition: 'transform 0.5s ease'
   },
   footer: {
-    width: "100%",
-    display: "flex",
-    justifyContent: "space-between",
-    paddingTop: theme.spacing(1),
+    width: '100%',
+    display: 'flex',
+    justifyContent: 'space-between',
+    paddingTop: theme.spacing(1)
   },
   productPrice: {
-    display: "inline",
+    display: 'inline'
   },
   productName: {
-    display: "inline",
-  },
+    display: 'inline'
+  }
 }));
 
 const ProductCard = ({ id, brand, name, api_featured_image, price }) => {
@@ -50,7 +50,7 @@ const ProductCard = ({ id, brand, name, api_featured_image, price }) => {
     <Grid className={wrapper} item md={4} sm={6} xs={12}>
       <Paper
         elevation={1}
-        style={{ width: "100%", height: "100%" }}
+        style={{ width: '100%', height: '100%' }}
         onClick={handleClick}
       >
         <div
@@ -68,8 +68,8 @@ const ProductCard = ({ id, brand, name, api_featured_image, price }) => {
             <div className={productPrice}>9.99</div>
           ) : (
             <div className={productPrice}>
-              {price.slice(price.indexOf(".")).length === 2
-                ? price + "0"
+              {price.slice(price.indexOf('.')).length === 2
+                ? price + '0'
                 : price}
             </div>
           ))}

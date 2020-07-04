@@ -1,7 +1,7 @@
-import React, { useState, useContext } from "react";
-import { useParams } from "react-router-dom";
-import { makeStyles } from "@material-ui/core/styles";
-import { ProductsContext } from "../../context/products-context";
+import React, { useState, useContext } from 'react';
+import { useParams } from 'react-router-dom';
+import { makeStyles } from '@material-ui/core/styles';
+import { ProductsContext } from '../../context/products-context';
 import {
   Grid,
   Typography,
@@ -9,34 +9,34 @@ import {
   ExpansionPanel,
   ExpansionPanelSummary,
   ExpansionPanelDetails,
-  Link,
-} from "@material-ui/core";
-import { ExpandMore, StarBorder } from "@material-ui/icons";
-import CustomButton from "../Custom-Button/Custom-Button.component";
+  Link
+} from '@material-ui/core';
+import { ExpandMore, StarBorder } from '@material-ui/icons';
+import CustomButton from '../custom-button/custom-button.component';
 
 const useStyles = makeStyles(theme => ({
   heading: {
     fontSize: theme.typography.pxToRem(15),
-    fontWeight: theme.typography.fontWeightBold,
+    fontWeight: theme.typography.fontWeightBold
   },
   image: {
-    width: "80%",
-    height: "auto",
-    objectFit: "cover",
-    backgroundPosition: "center",
+    width: '80%',
+    height: 'auto',
+    objectFit: 'cover',
+    backgroundPosition: 'center'
   },
   wrapper: {
-    marginTop: theme.spacing(10),
+    marginTop: theme.spacing(10)
   },
   textWrapper: {
-    flexDirection: "column",
-    height: "80%",
-    marginTop: theme.spacing(3),
+    flexDirection: 'column',
+    height: '80%',
+    marginTop: theme.spacing(3)
   },
   expansionPanel: {
-    opacity: "0.9",
-    marginTop: theme.spacing(4),
-  },
+    opacity: '0.9',
+    marginTop: theme.spacing(4)
+  }
 }));
 
 const ProductDetails = () => {
@@ -45,15 +45,7 @@ const ProductDetails = () => {
   const { id } = useParams();
   const data = products.find(item => item.id == id);
   const nums = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-  // const {
-  //   api_featured_image,
-  //   name,
-  //   brand,
-  //   product_link,
-  //   description,
-  //   tag_list,
-  //   price,
-  // } = product;
+
   const { heading, image, wrapper, textWrapper, expansionPanel } = useStyles();
   const [num, setNum] = useState(1);
 
@@ -84,18 +76,18 @@ const ProductDetails = () => {
             >
               <Grid item xs={12}>
                 {data.brand && (
-                  <Typography variant="h6">
+                  <Typography variant='h6'>
                     {data.brand.toUpperCase()}
                   </Typography>
                 )}
               </Grid>
 
               <Grid item xs={12}>
-                <Typography variant="subtitle1">{data.name}</Typography>
+                <Typography variant='subtitle1'>{data.name}</Typography>
               </Grid>
 
               <Grid item xs={12}>
-                <StarBorder /> <StarBorder /> <StarBorder /> <StarBorder />{" "}
+                <StarBorder /> <StarBorder /> <StarBorder /> <StarBorder />{' '}
                 <StarBorder /> <em> No reviews yet</em>
               </Grid>
               <Grid item xs={12}>
@@ -105,8 +97,8 @@ const ProductDetails = () => {
                   ) : (
                     <div>
                       $
-                      {data.price.slice(data.price.indexOf(".")).length === 2
-                        ? data.price + "0"
+                      {data.price.slice(data.price.indexOf('.')).length === 2
+                        ? data.price + '0'
                         : data.price}
                     </div>
                   ))}
@@ -126,12 +118,12 @@ const ProductDetails = () => {
                   ))}
                 </TextField>
               </Grid>
-              <Grid item xs={12} style={{ width: "80%" }}>
+              <Grid item xs={12} style={{ width: '80%' }}>
                 <CustomButton>ADD TO CART</CustomButton>
               </Grid>
 
               <Grid item xs={12}>
-                <Typography variant="subtitle2">
+                <Typography variant='subtitle2'>
                   FREE SHIPPING & EASY RETURNS.
                 </Typography>
               </Grid>
@@ -139,7 +131,7 @@ const ProductDetails = () => {
           </Grid>
           <ExpansionPanel className={expansionPanel}>
             <ExpansionPanelSummary expandIcon={<ExpandMore />}>
-              <Typography className={heading} variant="body1">
+              <Typography className={heading} variant='body1'>
                 PRODUCT DETAILS
               </Typography>
             </ExpansionPanelSummary>
@@ -150,7 +142,7 @@ const ProductDetails = () => {
                 </Grid>
                 <Grid item xs={12} sm={6}>
                   {data.tag_list && data.tag_list.length > 0 && (
-                    <Typography variant="body1">
+                    <Typography variant='body1'>
                       Concerns:
                       {data.tag_list[0] && <em> {data.tag_list[0]}</em>}
                       {data.tag_list[1] && <em>, {data.tag_list[1]}</em>}
@@ -161,7 +153,7 @@ const ProductDetails = () => {
                   )}
                 </Grid>
                 <Grid item xs={12} sm={6}>
-                  <Link target="_blank" href={data.product_link}>
+                  <Link target='_blank' href={data.product_link}>
                     LEARN MORE
                   </Link>
                 </Grid>

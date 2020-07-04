@@ -1,23 +1,24 @@
-import React from "react";
-import { Grid, Typography } from "@material-ui/core";
-import { makeStyles } from "@material-ui/styles";
-import { useHistory } from "react-router-dom";
+import React from 'react';
+import { Grid, Typography } from '@material-ui/core';
+import { makeStyles } from '@material-ui/styles';
+import { useHistory } from 'react-router-dom';
 
 const useStyles = makeStyles(theme => ({
   wrapper: {
-    width: "10vw",
-    border: "5px solid #160f30",
-    margin: theme.spacing(1),
-    textAlign: "center",
-    height: "10vh",
-    "&:hover": {
-      backgroundColor: "#160f30",
-      color: "white",
-    },
+    display: 'flex',
+    border: '5px solid #160f30',
+    margin: theme.spacing(0.5),
+    textAlign: 'center',
+    height: '10vh',
+    alignItems: 'center',
+    '&:hover': {
+      backgroundColor: '#160f30',
+      color: 'white'
+    }
   },
   title: {
-    paddingTop: theme.spacing(2),
-  },
+    margin: 'auto'
+  }
 }));
 
 const CategoryNameContainer = ({ children, name }) => {
@@ -25,6 +26,7 @@ const CategoryNameContainer = ({ children, name }) => {
   const history = useHistory();
 
   const handleClick = e => {
+    console.log(e.target.id);
     history.push(`/category/${e.target.id}`);
   };
   return (
@@ -33,11 +35,11 @@ const CategoryNameContainer = ({ children, name }) => {
       id={name}
       onClick={handleClick}
       item
-      xs={6}
+      xs={5}
       sm={3}
       md={2}
     >
-      <Typography variant="h5" className={title}>
+      <Typography id={name} variant='h6' className={title}>
         {children.toUpperCase()}
       </Typography>
     </Grid>

@@ -1,15 +1,11 @@
-import React from "react";
-import { Grid } from "@material-ui/core";
-import CategoryNameContainer from "./category-name-container.component";
-import CategoryName from "../category-list/category-names";
+import React from 'react';
+import { Grid } from '@material-ui/core';
+import CategoryNameContainer from './category-name-container.component';
+import CategoryName from '../category-list/category-names';
 
 const ShopByCategory = () => {
   return (
-    <Grid
-      container
-      spacing={2}
-      style={{ margin: "10px", justifyContent: "space-between" }}
-    >
+    <Grid container spacing={1} style={{ justifyContent: 'space-around' }}>
       <CategoryNameContainer name={CategoryName[0]}>
         {CategoryName[0]}
       </CategoryNameContainer>

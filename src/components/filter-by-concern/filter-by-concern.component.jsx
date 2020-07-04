@@ -1,41 +1,41 @@
-import React, { useState, useEffect, useContext } from "react";
-import { ProductsContext } from "../../context/products-context";
-import { makeStyles } from "@material-ui/core/styles";
+import React, { useState, useEffect, useContext } from 'react';
+import { ProductsContext } from '../../context/products-context';
 import {
   FormGroup,
   FormControlLabel,
   Checkbox,
-  Typography,
-} from "@material-ui/core";
+  Typography
+} from '@material-ui/core';
 
-const FilterByConcerns = () => {
+const FilterByConcern = () => {
   const { products, setFiltered } = useContext(ProductsContext);
 
   const [filters, setFilters] = useState([]);
+
   const [state, setState] = useState({
     Canadian: false,
     CertClean: false,
-    "Chemical Free": false,
-    "Dairy Free": false,
-    "EWG Verified": false,
+    'Chemical Free': false,
+    'Dairy Free': false,
+    'EWG Verified': false,
     EcoCert: false,
-    "Fair Trade": false,
-    "Gluten Free": false,
+    'Fair Trade': false,
+    'Gluten Free': false,
     Hypoallergenic: false,
     Natural: false,
     NoTalc: false,
-    "Non-GMO": false,
+    'Non-GMO': false,
     Organic: false,
-    "Peanut Free Product": false,
-    "Sugar Free": false,
-    "USDA Organic": false,
+    'Peanut Free Product': false,
+    'Sugar Free': false,
+    'USDA Organic': false,
     Vegan: false,
-    "alcohol free": false,
-    "cruelty free": false,
-    "oil free": false,
+    'alcohol free': false,
+    'cruelty free': false,
+    'oil free': false,
     purpicks: false,
-    "silicone free": false,
-    "water free": false,
+    'silicone free': false,
+    'water free': false
   });
 
   useEffect(() => {
@@ -67,20 +67,21 @@ const FilterByConcerns = () => {
       setFilters([...filters, e.target.name]);
     }
   };
+
   return (
     <>
-      <Typography variant="body2">CONCERN</Typography>
+      <Typography variant='body2'>CONCERN</Typography>
       <hr />
-      <FormGroup column="true">
+      <FormGroup column='true'>
         <FormControlLabel
           control={
             <Checkbox
               checked={state.Canadian}
               onChange={handleChange}
-              name="Canadian"
+              name='Canadian'
             />
           }
-          label="Canadian"
+          label='Canadian'
         />
 
         <FormControlLabel
@@ -88,74 +89,74 @@ const FilterByConcerns = () => {
             <Checkbox
               checked={state.CertClean}
               onChange={handleChange}
-              name="CertClean"
+              name='CertClean'
             />
           }
-          label="Certified Clean"
+          label='Certified Clean'
         />
 
         <FormControlLabel
           control={
             <Checkbox
-              checked={state["Chemical Free"]}
+              checked={state['Chemical Free']}
               onChange={handleChange}
-              name="Chemical Free"
+              name='Chemical Free'
             />
           }
-          label="Chemical Free"
+          label='Chemical Free'
         />
         <FormControlLabel
           control={
             <Checkbox
-              checked={state["Dairy Free"]}
+              checked={state['Dairy Free']}
               onChange={handleChange}
-              name="Dairy Free"
+              name='Dairy Free'
             />
           }
-          label="Dairy Free"
+          label='Dairy Free'
         />
         <FormControlLabel
           control={
             <Checkbox
-              checked={state["EWG Verified"]}
+              checked={state['EWG Verified']}
               onChange={handleChange}
-              name="EWG Verified"
+              name='EWG Verified'
             />
           }
-          label="EWG Verified"
-        />
-
-        <FormControlLabel
-          control={
-            <Checkbox
-              checked={state.EcoCert}
-              onChange={handleChange}
-              name="EcoCert"
-            />
-          }
-          label="Eco Certified"
+          label='EWG Verified'
         />
 
         <FormControlLabel
           control={
             <Checkbox
-              checked={state["FairTrade"]}
+              checked={state['EcoCert']}
               onChange={handleChange}
-              name="Fair Trade"
+              name='EcoCert'
             />
           }
-          label="Fair Trade"
+          label='Eco Certified'
         />
 
         <FormControlLabel
           control={
             <Checkbox
-              checked={state["GlutenFree"]}
+              checked={state['FairTrade']}
               onChange={handleChange}
-              name="Gluten Free"
+              name='Fair Trade'
             />
           }
-          label="Gluten Free"
+          label='Fair Trade'
+        />
+
+        <FormControlLabel
+          control={
+            <Checkbox
+              checked={state['GlutenFree']}
+              onChange={handleChange}
+              name='Gluten Free'
+            />
+          }
+          label='Gluten Free'
         />
 
         <FormControlLabel
@@ -163,10 +164,10 @@ const FilterByConcerns = () => {
             <Checkbox
               checked={state.Hypoallergenic}
               onChange={handleChange}
-              name="Hypoallergenic"
+              name='Hypoallergenic'
             />
           }
-          label="Hypoallergenic"
+          label='Hypoallergenic'
         />
 
         <FormControlLabel
@@ -174,32 +175,32 @@ const FilterByConcerns = () => {
             <Checkbox
               checked={state.Natural}
               onChange={handleChange}
-              name="Natural"
+              name='Natural'
             />
           }
-          label="Natural"
+          label='Natural'
         />
 
         <FormControlLabel
           control={
             <Checkbox
-              checked={state["No Talc"]}
+              checked={state['No Talc']}
               onChange={handleChange}
-              name="No Talc"
+              name='No Talc'
             />
           }
-          label="No Talc"
+          label='No Talc'
         />
 
         <FormControlLabel
           control={
             <Checkbox
-              checked={state["Non-GMO"]}
+              checked={state['Non-GMO']}
               onChange={handleChange}
-              name="Non-GMO"
+              name='Non-GMO'
             />
           }
-          label="Non GMO"
+          label='Non GMO'
         />
 
         <FormControlLabel
@@ -207,117 +208,117 @@ const FilterByConcerns = () => {
             <Checkbox
               checked={state.Organic}
               onChange={handleChange}
-              name="Organic"
+              name='Organic'
             />
           }
-          label="Organic"
+          label='Organic'
         />
 
         <FormControlLabel
           control={
             <Checkbox
-              checked={state["Peanut Free Product"]}
+              checked={state['Peanut Free Product']}
               onChange={handleChange}
-              name="PeanutFreeProduct"
+              name='PeanutFreeProduct'
             />
           }
-          label="Peanut Free Product"
+          label='Peanut Free Product'
         />
 
         <FormControlLabel
           control={
             <Checkbox
-              checked={state["Sugar Free"]}
+              checked={state['Sugar Free']}
               onChange={handleChange}
-              name="Sugar Free"
+              name='Sugar Free'
             />
           }
-          label="Sugar Free"
+          label='Sugar Free'
         />
 
         <FormControlLabel
           control={
             <Checkbox
-              checked={state["USDA Organic"]}
+              checked={state['USDA Organic']}
               onChange={handleChange}
-              name="USDA Organic"
+              name='USDA Organic'
             />
           }
-          label="USDA Organic"
+          label='USDA Organic'
         />
         <FormControlLabel
           control={
             <Checkbox
               checked={state.Vegan}
               onChange={handleChange}
-              name="Vegan"
+              name='Vegan'
             />
           }
-          label="Vegan"
+          label='Vegan'
         />
         <FormControlLabel
           control={
             <Checkbox
-              checked={state["alcohol free"]}
+              checked={state['alcohol free']}
               onChange={handleChange}
-              name="alcohol free"
+              name='alcohol free'
             />
           }
-          label="alcohol free"
+          label='alcohol free'
         />
         <FormControlLabel
           control={
             <Checkbox
-              checked={state["cruelty free"]}
+              checked={state['cruelty free']}
               onChange={handleChange}
-              name="cruelty free"
+              name='cruelty free'
             />
           }
-          label="cruelty free"
+          label='cruelty free'
         />
         <FormControlLabel
           control={
             <Checkbox
-              checked={state["oil free"]}
+              checked={state['oil free']}
               onChange={handleChange}
-              name="oil free"
+              name='oil free'
             />
           }
-          label="oil free"
+          label='oil free'
         />
         <FormControlLabel
           control={
             <Checkbox
               checked={state.purpicks}
               onChange={handleChange}
-              name="purpicks"
+              name='purpicks'
             />
           }
-          label="purpicks"
+          label='purpicks'
         />
         <FormControlLabel
           control={
             <Checkbox
-              checked={state["silicone free"]}
+              checked={state['silicone free']}
               onChange={handleChange}
-              name="silicone free"
+              name='silicone free'
             />
           }
-          label="silicone free"
+          label='silicone free'
         />
         <FormControlLabel
           control={
             <Checkbox
-              checked={state["water free"]}
+              checked={state['water free']}
               onChange={handleChange}
-              name="water free"
+              name='water free'
             />
           }
-          label="water free"
+          label='water free'
         />
       </FormGroup>
     </>
   );
 };
 
-export default FilterByConcerns;
+export default FilterByConcern;

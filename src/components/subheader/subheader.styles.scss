@@ -1,0 +1,26 @@
+.subheader {
+  position: sticky;
+
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+
+  img {
+    height: 10vh;
+  }
+
+  .search-wrapper {
+    display: flex;
+    flex-direction: row nowrap;
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
+    .search-bar {
+      width: 60vw;
+    }
+    .shopping-cart {
+      margin-left: 1vw;
+      height: 4vh;
+    }
+  }
+}
